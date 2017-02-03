@@ -16,13 +16,19 @@
 <meta property="og:site_name" content="play~man专属">
 <meta property="og:description" content="学会怎么使用Hexo创建一篇博客，同时部署在GitHub，然后关联自己买的域名~
 1、创建博客2、提交到GitHub3、关联域名">
-<meta property="og:image" content="http://a5566baga.github.io/../assets/blogPic/DeployBlog/deploy01.png">
-<meta property="og:updated_time" content="2017-02-03T13:49:05.106Z">
+<meta property="og:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy01.png">
+<meta property="og:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy02.png">
+<meta property="og:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy03.png">
+<meta property="og:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy04.png">
+<meta property="og:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy05.png">
+<meta property="og:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy06.png">
+<meta property="og:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy07.png">
+<meta property="og:updated_time" content="2017-02-03T14:18:04.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署GitHub+域名">
 <meta name="twitter:description" content="学会怎么使用Hexo创建一篇博客，同时部署在GitHub，然后关联自己买的域名~
 1、创建博客2、提交到GitHub3、关联域名">
-<meta name="twitter:image" content="http://a5566baga.github.io/../assets/blogPic/DeployBlog/deploy01.png">
+<meta name="twitter:image" content="http://a5566baga.github.io/assets/blogPic/DeployBlog/deploy01.png">
   
     <link rel="alternative" href="/atom.xml" title="play~man专属" type="application/atom+xml">
   
@@ -212,7 +218,7 @@
 <h4 id="1、创建博客"><a href="#1、创建博客" class="headerlink" title="1、创建博客"></a>1、创建博客</h4><h4 id="2、提交到GitHub"><a href="#2、提交到GitHub" class="headerlink" title="2、提交到GitHub"></a>2、提交到GitHub</h4><h4 id="3、关联域名"><a href="#3、关联域名" class="headerlink" title="3、关联域名"></a>3、关联域名</h4></blockquote>
 <a id="more"></a>
 <h3 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h3><h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"文件名字"</span></div></pre></td></tr></table></figure>
-<p><img src="../assets/blogPic/DeployBlog/deploy01.png" alt="创建新博客"><br>Ok，如图所见，依旧是在根目录下进行bash，创建出来的是一个Markdown文件<br>默认内容是——</p>
+<p><img src="/assets/blogPic/DeployBlog/deploy01.png" alt="创建新博客"><br>OK，如图所见，依旧是在根目录下进行bash，创建出来的是一个Markdown文件<br>默认内容是——</p>
 <blockquote>
 <p>title: 部署GitHub+域名<br>date: 2017-02-03 21:11:28<br>tags:</p>
 </blockquote>
@@ -235,8 +241,17 @@
 <hr>
 <h3 id="提交到GitHub"><a href="#提交到GitHub" class="headerlink" title="提交到GitHub"></a>提交到GitHub</h3><h4 id="1、创建SSH"><a href="#1、创建SSH" class="headerlink" title="1、创建SSH"></a>1、创建SSH</h4><p>创建bash，输入<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></div></pre></td></tr></table></figure></p>
 <p>然后回车，输入密码，重复密码(这里可以连续回车，以后提交都不用输入密码了，方便)<br>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；<br>注意2: 此处的「-C」的是大写的「C」</p>
-<h4 id="2、添加到GitHub账号上"><a href="#2、添加到GitHub账号上" class="headerlink" title="2、添加到GitHub账号上"></a>2、添加到GitHub账号上</h4><p>打开GitHub</p>
-<h4 id="3、本地git设置，提交"><a href="#3、本地git设置，提交" class="headerlink" title="3、本地git设置，提交"></a>3、本地git设置，提交</h4>
+<h4 id="2、添加到GitHub账号上"><a href="#2、添加到GitHub账号上" class="headerlink" title="2、添加到GitHub账号上"></a>2、添加到GitHub账号上</h4><p>打开GitHub<br><img src="/assets/blogPic/DeployBlog/deploy02.png" alt="设置SSH"><br><img src="/assets/blogPic/DeployBlog/deploy03.png" alt="选择SSH"><br><img src="/assets/blogPic/DeployBlog/deploy04.png" alt="添加SSH"><br><img src="/assets/blogPic/DeployBlog/deploy05.png" alt="填写SSH"><br>id_rsa.pub文件里面内容</p>
+<h4 id="3、本地git设置，提交"><a href="#3、本地git设置，提交" class="headerlink" title="3、本地git设置，提交"></a>3、本地git设置，提交</h4><p>设置用户名和邮箱<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"你的用户名"</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span> <span class="string">"你的邮箱"</span></div></pre></td></tr></table></figure></p>
+<p>安装hexo git<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div></pre></td></tr></table></figure></p>
+<p>发布到GitHub<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo d -g</div></pre></td></tr></table></figure></p>
+<h2 id="登陆-用户名-github-io查看内容"><a href="#登陆-用户名-github-io查看内容" class="headerlink" title="- 登陆 用户名.github.io查看内容"></a>- 登陆 用户名.github.io查看内容</h2><h3 id="关联域名"><a href="#关联域名" class="headerlink" title="关联域名"></a>关联域名</h3><h4 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h4><ul>
+<li>在 public 文件夹下添加【CNAME】文件，注意：没有后缀名！！！</li>
+<li>里面第一行写，你的域名，注意：不加www！！！<br><img src="/assets/blogPic/DeployBlog/deploy06.png" alt="CNAME"><h4 id="在腾讯云中添加DNS"><a href="#在腾讯云中添加DNS" class="headerlink" title="在腾讯云中添加DNS"></a>在腾讯云中添加DNS</h4><img src="/assets/blogPic/DeployBlog/deploy07.png" alt="腾讯云配置"><br><br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo d -g</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="再重新提交一遍，OK，就可以看见自己的网站了。如果没有出现就等到第二天，如果还是没有，请检查配置内容，或是留言吧"><a href="#再重新提交一遍，OK，就可以看见自己的网站了。如果没有出现就等到第二天，如果还是没有，请检查配置内容，或是留言吧" class="headerlink" title="再重新提交一遍，OK，就可以看见自己的网站了。如果没有出现就等到第二天，如果还是没有，请检查配置内容，或是留言吧~"></a>再重新提交一遍，OK，就可以看见自己的网站了。如果没有出现就等到第二天，如果还是没有，请检查配置内容，或是留言吧~</h5><hr>
+<h3 id="完成，收工！"><a href="#完成，收工！" class="headerlink" title="完成，收工！"></a>完成，收工！</h3>
       
 
       
