@@ -5,11 +5,30 @@
     
   <url>
     <loc>http://a5566baga.cn/2017/02/08/struts2-3%E7%89%88%E6%9C%AC%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-02-08T14:29:33.486Z</lastmod>
+    <lastmod>2017-02-09T12:52:34.813Z</lastmod>
     <data>
         <display>
         <title>struts2.3版本基本配置</title>
         <pubTime>2017-02-08T14:07:56.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>struts2</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://a5566baga.cn/2017/02/08/struts2%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</loc>
+    <lastmod>2017-02-09T12:50:14.755Z</lastmod>
+    <data>
+        <display>
+        <title>struts2使用注意</title>
+        <pubTime>2017-02-08T13:56:21.000Z</pubTime>
         
         <tag>JAVA</tag>
          
@@ -29,25 +48,6 @@
         <display>
         <title>struts2.5版本基本配置</title>
         <pubTime>2017-02-08T14:08:13.000Z</pubTime>
-        
-        <tag>JAVA</tag>
-         
-        <tag>struts2</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://a5566baga.cn/2017/02/08/struts2%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F/</loc>
-    <lastmod>2017-02-08T14:12:50.247Z</lastmod>
-    <data>
-        <display>
-        <title>struts2使用注意</title>
-        <pubTime>2017-02-08T13:56:21.000Z</pubTime>
         
         <tag>JAVA</tag>
          
