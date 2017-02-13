@@ -190,6 +190,225 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-struts2拦截器配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/struts2拦截器配置/">struts2拦截器配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/13/struts2拦截器配置/" class="archive-article-date">
+  	<time datetime="2017-02-13T12:03:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><h5 id="struts-xml中"><a href="#struts-xml中" class="headerlink" title="struts.xml中"></a>struts.xml中</h5><pre><code>name：自定义拦截器的名称
+class：拦截器所在的类
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;interceptor name=<span class="string">"myInterceptor"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.ben.interceptor.MyInterceptor"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">interceptor</span>&gt;</span></span></div><div class="line">&lt;action name=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">""</span>&gt;</div><div class="line">	<span class="xml"><span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"defaultStack"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></span></div><div class="line">	<span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"myInterceptor"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="MyInterceptor-java"><a href="#MyInterceptor-java" class="headerlink" title="MyInterceptor.java"></a>MyInterceptor.java</h6><pre><code>实现Interceptor接口，重写方法
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ben.interceptor;</div><div class="line"><span class="keyword">import</span> com.opensymphony.xwork2.ActionInvocation;</div><div class="line"><span class="keyword">import</span> com.opensymphony.xwork2.interceptor.Interceptor;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">implements</span> <span class="title">Interceptor</span></span>&#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">intercept</span><span class="params">(ActionInvocation arg0)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts2</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/13/struts2拦截器配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Node-js安装与nmp的基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/Node-js安装与nmp的基本使用/">Node.js安装与nmp的基本使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/13/Node-js安装与nmp的基本使用/" class="archive-article-date">
+  	<time datetime="2017-02-13T12:00:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><h2 id="JavaScript引擎"><a href="#JavaScript引擎" class="headerlink" title="JavaScript引擎"></a>JavaScript引擎</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Browser,Headless Browser,or Runtime</th>
+<th style="text-align:center">JavaScript Engine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Mozilla</td>
+<td style="text-align:center">Spidermonkey</td>
+</tr>
+<tr>
+<td style="text-align:center">Chrome</td>
+<td style="text-align:center">V8</td>
+</tr>
+<tr>
+<td style="text-align:center">Safari</td>
+<td style="text-align:center">JavaScriptCore</td>
+</tr>
+<tr>
+<td style="text-align:center">IE and Edge</td>
+<td style="text-align:center">Chakra</td>
+</tr>
+<tr>
+<td style="text-align:center">PhantomJS</td>
+<td style="text-align:center">JavaScriptCore</td>
+</tr>
+<tr>
+<td style="text-align:center">HTMLUnit</td>
+<td style="text-align:center">Rhino</td>
+</tr>
+<tr>
+<td style="text-align:center">TrifileJS</td>
+<td style="text-align:center">V8</td>
+</tr>
+<tr>
+<td style="text-align:center">Node.js</td>
+<td style="text-align:center">V8</td>
+</tr>
+<tr>
+<td style="text-align:center">Io.js</td>
+<td style="text-align:center">V8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chrome的V8引擎"><a href="#chrome的V8引擎" class="headerlink" title="chrome的V8引擎"></a>chrome的V8引擎</h3><h2 id="初识Node-js"><a href="#初识Node-js" class="headerlink" title="初识Node.js"></a>初识Node.js</h2><h3 id="npm-Node-Package-Manager"><a href="#npm-Node-Package-Manager" class="headerlink" title="npm(Node Package Manager)"></a>npm(Node Package Manager)</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>Node.js内置的包管理工具</li>
+<li>收录大量的开源工具</li>
+<li>社群稳定</li>
+<li>生态发达</li>
+</ul>
+<h4 id="npm的使用方法"><a href="#npm的使用方法" class="headerlink" title="npm的使用方法"></a>npm的使用方法</h4><ul>
+<li>安装node.js 后系统会自动安装npm</li>
+<li>npm -v 查询版本</li>
+<li>npm init 新建工程项目</li>
+<li>npm install 安装包</li>
+<li>npm update更新模块</li>
+<li><a href="http://www.cnblogs.com/PeunZhang/p/5553574.html#npm-update" target="_blank" rel="external">常用命令列表…</a></li>
+</ul>
+<p>初始化 init命令<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ npm init</div><div class="line">name: (0213)名称</div><div class="line">version: (1.0.0)版本号</div><div class="line">description:描述</div><div class="line">entry point: (index.js)入口点</div><div class="line"><span class="keyword">test </span>command:测试命令</div><div class="line">git repository:git的仓库</div><div class="line">keywords:关键词</div><div class="line">author: 作者</div><div class="line">license: (ISC)开源证书</div></pre></td></tr></table></figure></p>
+<p>安装库 install命令<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install </span><span class="keyword">jquery </span>--save</div></pre></td></tr></table></figure></p>
+<p>删除 uninstall<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nmp <span class="keyword">uninstall</span> jquery <span class="comment">--save</span></div></pre></td></tr></table></figure></p>
+<p>安装低版本 @接版本号<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm install jquery<span class="variable">@2</span> --save</div></pre></td></tr></table></figure></p>
+<p>安装的另一种写法 –save位置不同<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span> <span class="comment">--save bootstrap</span></div></pre></td></tr></table></figure></p>
+<p>在删除node_modules文件夹后，只要json文件在，直接执行install命令<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span></div></pre></td></tr></table></figure></p>
+<p>更新<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">npm</span> update jquery</div></pre></td></tr></table></figure></p>
+<p>更换源，换成淘宝的NPM镜像<br><a href="https://npm.taobao.org/" target="_blank" rel="external">官网</a><br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">npm</span> install -g cnpm --registry=https:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org</div></pre></td></tr></table></figure></p>
+<h2 id="Node-js使用"><a href="#Node-js使用" class="headerlink" title="Node.js使用"></a>Node.js使用</h2><ul>
+<li>Node.js需要借助命令行界面运行</li>
+<li>REPL程序</li>
+<li>启动外部代码文件</li>
+</ul>
+<p>node命令直接启动<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">node</span></div><div class="line"><span class="title">&gt; 输入内容</span></div></pre></td></tr></table></figure></p>
+<h3 id="模块怎么用？"><a href="#模块怎么用？" class="headerlink" title="模块怎么用？"></a>模块怎么用？</h3><ul>
+<li>Node.js中也有全局对象的概念</li>
+<li>exports对象</li>
+<li>require对象</li>
+</ul>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>cal.js<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">exports.add = <span class="function"><span class="keyword">function</span><span class="params">(x, y)</span> </span>&#123;</div><div class="line">  <span class="keyword">return</span> x+y;</div><div class="line">&#125;</div><div class="line">exports.minus = <span class="function"><span class="keyword">function</span> <span class="params">(x, y)</span> </span>&#123;</div><div class="line">  <span class="keyword">return</span> x-y;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cal = <span class="built_in">require</span>(<span class="string">'./cal.js'</span>);</div><div class="line"><span class="built_in">console</span>.log(cal.add(<span class="number">5</span>,<span class="number">6</span>));</div></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">node</span> <span class="title">index</span>.js</div><div class="line"><span class="number">11</span></div></pre></td></tr></table></figure></p>
+<h4 id="module-exports在模块中只能写一次，后面的会覆盖。什么对象都能导出"><a href="#module-exports在模块中只能写一次，后面的会覆盖。什么对象都能导出" class="headerlink" title="module.exports在模块中只能写一次，后面的会覆盖。什么对象都能导出"></a>module.exports在模块中只能写一次，后面的会覆盖。什么对象都能导出</h4><p>hello.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义原型函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'hello func'</span>;</div><div class="line">  <span class="keyword">this</span>.version = <span class="string">'1.0'</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//添加方法</span></div><div class="line">Hello.prototype = &#123;</div><div class="line">  <span class="attr">say</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//module抛出,这个只能写一次</span></div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure></p>
+<p>index.js<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加载</span></div><div class="line"><span class="keyword">var</span> hello = require(<span class="string">'./cal.js'</span>);</div><div class="line"><span class="comment">//创建</span></div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="type">hello</span>();</div><div class="line"><span class="comment">//调用</span></div><div class="line">a.say();</div></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">node</span> <span class="title">index</span>.js</div><div class="line">hello func</div></pre></td></tr></table></figure></p>
+<p>应用场景，如配置文件<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//只抛一次，全都可以用</span></div><div class="line"><span class="keyword">var</span> <span class="keyword">config</span> = &#123;</div><div class="line">  username:<span class="string">"root"</span>,</div><div class="line">  password:<span class="string">"root"</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">module</span><span class="variable">.exports</span> = <span class="keyword">config</span>;</div></pre></td></tr></table></figure></p>
+<h4 id="搭建服务器-注意-这种方式不是每个浏览器都能正常查看"><a href="#搭建服务器-注意-这种方式不是每个浏览器都能正常查看" class="headerlink" title="搭建服务器(注意:这种方式不是每个浏览器都能正常查看)"></a>搭建服务器(注意:这种方式不是每个浏览器都能正常查看)</h4><p>index.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line">    response.writeHead(<span class="number">200</span>,&#123;<span class="string">"Content-type"</span>:<span class="string">"text/html;charset=UTF-8"</span>&#125;);</div><div class="line">    response.end(<span class="string">'&lt;h1&gt;Hello Server&lt;/h1&gt;'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">server.listen(<span class="number">4000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server is running at 4000'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>命令行<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">node</span> <span class="title">index</span>.js</div><div class="line">server is running at <span class="number">4000</span></div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/13/Node-js安装与nmp的基本使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-iOS毛玻璃效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -749,143 +968,6 @@
 
 
   
-    <article id="post-简单斗鱼网站页面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/06/简单斗鱼网站页面/">简单斗鱼网站页面</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/06/简单斗鱼网站页面/" class="archive-article-date">
-  	<time datetime="2017-02-06T10:43:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="利用H5和CSS3制作简单的斗鱼页面"><a href="#利用H5和CSS3制作简单的斗鱼页面" class="headerlink" title="利用H5和CSS3制作简单的斗鱼页面"></a>利用H5和CSS3制作简单的斗鱼页面</h2><blockquote>
-<h4 id="利用的技术有"><a href="#利用的技术有" class="headerlink" title="利用的技术有"></a>利用的技术有</h4><blockquote>
-<p>video标签</p>
-<p>CSS3的动画</p>
-<p>自定义控制按钮</p>
-<p>引入第三方字体图标</p>
-</blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/02/06/简单斗鱼网站页面/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/06/简单斗鱼网站页面/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-调查问卷" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/05/调查问卷/">调查问卷</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/05/调查问卷/" class="archive-article-date">
-  	<time datetime="2017-02-05T14:26:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="健身餐需求调查表"><a href="#健身餐需求调查表" class="headerlink" title="健身餐需求调查表"></a>健身餐需求调查表</h2><blockquote>
-<p>毕业设计需求分析阶段——分析用户人群，提炼应用功能<br><a href="https://www.wenjuan.net/s/UNz2em/">健身餐需求调查表</a></p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/02/05/调查问卷/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/05/调查问卷/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -995,19 +1077,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前台</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color3">前台</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
