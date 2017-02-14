@@ -6,17 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://a5566baga.cn">
-  <title>Archives: 2017/2 | play~man专属</title>
+  <title>struts2注解类型转换国际化 | play~man专属</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="那个男人~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="play~man专属">
-<meta property="og:url" content="http://a5566baga.cn/archives/2017/02/page/2/index.html">
+  <meta name="description" content="注解使用
+导包  @ParentPackage  @Namespace  @Action()默认action名称
+
+默认动态配置没打开,手动配置在struts.xml中添加
+1&amp;lt;constant name=&quot;struts.enable.DynamicMethodInvocation&quot; value=&quot;true&quot;&amp;gt;&amp;lt;/constant&amp;gt;
+  在struts2-core-2.3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="struts2注解类型转换国际化">
+<meta property="og:url" content="http://a5566baga.cn/2017/02/14/struts2注解类型转换国际化/index.html">
 <meta property="og:site_name" content="play~man专属">
-<meta property="og:description" content="那个男人~">
+<meta property="og:description" content="注解使用
+导包  @ParentPackage  @Namespace  @Action()默认action名称
+
+默认动态配置没打开,手动配置在struts.xml中添加
+1&amp;lt;constant name=&quot;struts.enable.DynamicMethodInvocation&quot; value=&quot;true&quot;&amp;gt;&amp;lt;/constant&amp;gt;
+  在struts2-core-2.3.">
+<meta property="og:updated_time" content="2017-02-14T11:10:33.069Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="play~man专属">
-<meta name="twitter:description" content="那个男人~">
+<meta name="twitter:title" content="struts2注解类型转换国际化">
+<meta name="twitter:description" content="注解使用
+导包  @ParentPackage  @Namespace  @Action()默认action名称
+
+默认动态配置没打开,手动配置在struts.xml中添加
+1&amp;lt;constant name=&quot;struts.enable.DynamicMethodInvocation&quot; value=&quot;true&quot;&amp;gt;&amp;lt;/constant&amp;gt;
+  在struts2-core-2.3.">
   
     <link rel="alternative" href="/atom.xml" title="play~man专属" type="application/atom+xml">
   
@@ -188,36 +204,100 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-struts2注解类型转换国际化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/08/struts2使用注意/" class="archive-article-date">
-  	<time datetime="2017-02-08T13:56:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/08/struts2使用注意/">struts2使用注意</a>
+    <h1 class="article-title" itemprop="name">
+      struts2注解类型转换国际化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/14/struts2注解类型转换国际化/" class="archive-article-date">
+  	<time datetime="2017-02-14T11:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="注解使用"><a href="#注解使用" class="headerlink" title="注解使用"></a>注解使用</h2><ul>
+<li><p>导包<br>  @ParentPackage<br>  @Namespace<br>  @Action()默认action名称</p>
+</li>
+<li><p>默认动态配置没打开,手动配置<br>在struts.xml中添加</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="built_in">constant</span> <span class="built_in">name</span>=<span class="string">"struts.enable.DynamicMethodInvocation"</span> value=<span class="string">"true"</span>&gt;&lt;/<span class="built_in">constant</span>&gt;</div></pre></td></tr></table></figure>
+<p>  在struts2-core-2.3.31.jar—&gt;org.apache.struts2—&gt;default.properties找【struts.enable.DynamicMethodInvocation = false】然后进行相应的修改</p>
+</li>
+<li><p>修改xml和java文件</p>
+</li>
+<li>Action的java文件中配置的注解不要用一个value，否则后面会覆盖</li>
+<li>在每个方法前面写@Action注解</li>
+<li>对应jsp进行action的修改<h5 id="代码举例"><a href="#代码举例" class="headerlink" title="代码举例"></a>代码举例</h5>java代码<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@ParentPackage</span>(<span class="string">"struts-default"</span>)</div><div class="line"><span class="variable">@Namespace</span>(<span class="string">"/users"</span>)</div><div class="line"><span class="variable">@Results</span>(&#123;<span class="variable">@Result</span>(name=<span class="string">"query"</span>,type=<span class="string">"chain"</span>,params=&#123;<span class="string">"actionName"</span>,<span class="string">"query"</span>&#125;)&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li>应用场景，如：日期的自定义</li>
+<li>实现TypeConverter</li>
+<li>配置 .properties文件，命名要规范(类名-conversion.properties)</li>
+<li>提交录入是执行/显示数据时执行</li>
+</ul>
+<h5 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h5><ul>
+<li>继承StrutsTypeConverter</li>
+<li>在重写的两个方法中分别对应表单提交和查询表示</li>
+<li>提交表单的方法中可以针对提交的内容进行封装</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">public <span class="built_in">Object</span> convertFromString(<span class="built_in">Map</span> context, <span class="built_in">String</span>[] params, Class toClass) &#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//从Object转为String——显示数据的时候执行此方法</span></div><div class="line"><span class="meta">@Override</span></div><div class="line">public <span class="built_in">String</span> convertToString(<span class="built_in">Map</span> context, <span class="built_in">Object</span> obj) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>全局配置xwork-conversion.properties里面可以配置全局的类型转换。放在包的根目录下
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java<span class="selector-class">.sql</span><span class="selector-class">.Date</span>=com<span class="selector-class">.ben</span><span class="selector-class">.struts</span><span class="selector-class">.converter</span><span class="selector-class">.DateConverter</span></div></pre></td></tr></table></figure>
+
+一般的放在包路径下
+</code></pre><h2 id="国际化"><a href="#国际化" class="headerlink" title="国际化"></a>国际化</h2><ul>
+<li>struts.xml中配置标签</li>
+<li>配合标签使用</li>
+<li>设置.properties,注意前面的_zh_CN等标志</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>~(@^_^@)~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/paycode.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weChatePayCode.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -233,365 +313,112 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://a5566baga.cn/2017/02/14/struts2注解类型转换国际化/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/FitBody客户端功能设计/" class="archive-article-date">
-  	<time datetime="2017-02-06T11:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/FitBody客户端功能设计/">FitBody客户端功能设计</a>
-    </h1>
+    <a href="/2017/02/14/Node-js搭建本地静态服务器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Node.js搭建本地静态服务器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/13/struts2拦截器配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">struts2拦截器配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="struts2注解类型转换国际化" data-title="struts2注解类型转换国际化" data-url="http://a5566baga.cn/2017/02/14/struts2注解类型转换国际化/" style="margin:40px;border:4px solid #CCCCCC;padding:15px;border-radius:15px;"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"a5566baga"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/简单斗鱼网站页面/" class="archive-article-date">
-  	<time datetime="2017-02-06T10:43:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/简单斗鱼网站页面/">简单斗鱼网站页面</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/05/调查问卷/" class="archive-article-date">
-  	<time datetime="2017-02-05T14:26:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/05/调查问卷/">调查问卷</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/05/CSS3动画/" class="archive-article-date">
-  	<time datetime="2017-02-05T02:15:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/05/CSS3动画/">CSS3动画</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/04/开题报告/" class="archive-article-date">
-  	<time datetime="2017-02-04T14:24:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/04/开题报告/">开题报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/04/H5知识简单总结/" class="archive-article-date">
-  	<time datetime="2017-02-04T10:09:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/04/H5知识简单总结/">H5知识简单总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/03/部署GitHub-域名/" class="archive-article-date">
-  	<time datetime="2017-02-03T13:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/03/部署GitHub-域名/">部署GitHub-域名</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/03/hexo-theme-yilia简单配置/" class="archive-article-date">
-  	<time datetime="2017-02-03T11:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/03/hexo-theme-yilia简单配置/">hexo-theme-yilia简单配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/03/hexo-github创建个人博客/" class="archive-article-date">
-  	<time datetime="2017-02-03T08:59:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/03/hexo-github创建个人博客/">hexo+github创建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/02/">&laquo; Prev</a><a class="page-number" href="/archives/2017/02/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -614,8 +441,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
