@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://a5566baga.cn">
-  <title>Archives | play~man专属</title>
+  <title>Node.js创建一个显示天气的服务 | play~man专属</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="那个男人~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="play~man专属">
-<meta property="og:url" content="http://a5566baga.cn/archives/page/2/index.html">
+  <meta name="description" content="使用Node.js与和风天气创建一个天气服务
+注册和风天气账号Node.js安装Express安装ejs框架页面的搭建解析JSON数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js创建一个显示天气的服务">
+<meta property="og:url" content="http://a5566baga.cn/2017/02/15/Node-js创建一个显示天气的服务/index.html">
 <meta property="og:site_name" content="play~man专属">
-<meta property="og:description" content="那个男人~">
+<meta property="og:description" content="使用Node.js与和风天气创建一个天气服务
+注册和风天气账号Node.js安装Express安装ejs框架页面的搭建解析JSON数据">
+<meta property="og:image" content="http://a5566baga.cn/../assets/blogPic/nodejsweather/01.png">
+<meta property="og:updated_time" content="2017-02-15T14:06:58.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="play~man专属">
-<meta name="twitter:description" content="那个男人~">
+<meta name="twitter:title" content="Node.js创建一个显示天气的服务">
+<meta name="twitter:description" content="使用Node.js与和风天气创建一个天气服务
+注册和风天气账号Node.js安装Express安装ejs框架页面的搭建解析JSON数据">
+<meta name="twitter:image" content="http://a5566baga.cn/../assets/blogPic/nodejsweather/01.png">
   
     <link rel="alternative" href="/atom.xml" title="play~man专属" type="application/atom+xml">
   
@@ -188,414 +194,192 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Node-js创建一个显示天气的服务" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/08/struts2-3版本基本配置/" class="archive-article-date">
-  	<time datetime="2017-02-08T14:07:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/08/struts2-3版本基本配置/">struts2.3版本基本配置</a>
+    <h1 class="article-title" itemprop="name">
+      Node.js创建一个显示天气的服务
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/15/Node-js创建一个显示天气的服务/" class="archive-article-date">
+  	<time datetime="2017-02-15T12:15:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="使用Node-js与和风天气创建一个天气服务"><a href="#使用Node-js与和风天气创建一个天气服务" class="headerlink" title="使用Node.js与和风天气创建一个天气服务"></a>使用Node.js与和风天气创建一个天气服务</h1><blockquote>
+<h4 id="注册和风天气账号"><a href="#注册和风天气账号" class="headerlink" title="注册和风天气账号"></a>注册<a href="http://www.heweather.com/" target="_blank" rel="external">和风天气账号</a></h4><h4 id="Node-js安装Express"><a href="#Node-js安装Express" class="headerlink" title="Node.js安装Express"></a>Node.js安装Express</h4><h4 id="安装ejs框架"><a href="#安装ejs框架" class="headerlink" title="安装ejs框架"></a>安装ejs框架</h4><h4 id="页面的搭建"><a href="#页面的搭建" class="headerlink" title="页面的搭建"></a>页面的搭建</h4><h4 id="解析JSON数据"><a href="#解析JSON数据" class="headerlink" title="解析JSON数据"></a>解析JSON数据</h4></blockquote>
+<a id="more"></a>
+<h2 id="注册和风天气账号-1"><a href="#注册和风天气账号-1" class="headerlink" title="注册和风天气账号"></a>注册和风天气账号</h2><p><a href="http://www.heweather.com/" target="_blank" rel="external">官网</a><br><a href="http://www.kancloud.cn/hefengyun/weather/224489" target="_blank" rel="external">API文档</a><br><a href="http://files.heweather.com/condition-code.txt" target="_blank" rel="external">天气图片对应</a></p>
+<h2 id="Node-js安装Express-1"><a href="#Node-js安装Express-1" class="headerlink" title="Node.js安装Express"></a>Node.js安装Express</h2><h4 id="在文件夹下初始化，创建工程"><a href="#在文件夹下初始化，创建工程" class="headerlink" title="在文件夹下初始化，创建工程"></a>在文件夹下初始化，创建工程</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">npm</span> init</div></pre></td></tr></table></figure>
+<h2 id="安装ejs"><a href="#安装ejs" class="headerlink" title="安装ejs"></a>安装ejs</h2><p>安装express包<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install <span class="built_in">express</span> --<span class="built_in">save</span></div></pre></td></tr></table></figure></p>
+<p>配置(创建app.js)<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="keyword">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="comment">//配置静态目录</span></div><div class="line">app.<span class="keyword">use</span>(express.<span class="keyword">static</span>(<span class="string">'public'</span>));</div><div class="line"><span class="comment">///设置监听端口</span></div><div class="line"><span class="keyword">var</span> server = app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">	console.log(<span class="string">"server 3000 running!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>安装ejs模板<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span> ejs <span class="comment">--save</span></div></pre></td></tr></table></figure></p>
+<p>配置ejs信息<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//配置放模板文件的目录</span></div><div class="line">app.<span class="keyword">set</span>(<span class="string">'views'</span>,<span class="string">'./views'</span>);</div><div class="line"><span class="comment">//模板引擎</span></div><div class="line">app.<span class="keyword">set</span>(<span class="string">'view engine'</span>,<span class="string">'ejs'</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="页面的搭建-1"><a href="#页面的搭建-1" class="headerlink" title="页面的搭建"></a>页面的搭建</h2><p>在上文配置的”views”文件夹下创建一个.ejs文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>当前天气<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<pre><code>里面用正常html书写即可。需要传参的时候用&lt;%%&gt;包裹关键词
+</code></pre><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line">	<span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap 101 Template<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">	      &lt;script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"&gt;&lt;/script&gt;</div><div class="line">	      &lt;script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</div><div class="line">	    &lt;![endif]--&gt;</div><div class="line">    	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line">    		<span class="selector-class">.weatherDiv</span>&#123;</div><div class="line">    			<span class="attribute">text-align</span>: center;</div><div class="line">    		&#125;</div><div class="line">    	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container-fluid"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].basic.city</span><span class="xml"><span class="tag">%&gt;</span>当前天气<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 weatherDiv"</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>今天(<span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].date</span><span class="xml"><span class="tag">%&gt;</span>)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://files.heweather.com/cond_icon/&lt;%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].cond.code_d</span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">alt</span>=<span class="string">"sss"</span>/&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].tmp.min</span><span class="xml"><span class="tag">%&gt;</span>~<span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].tmp.max</span><span class="xml"><span class="tag">%&gt;</span>摄氏度摄氏度<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].cond.text_d</span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].wind.dir</span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].wind.sc</span><span class="xml"><span class="tag">%&gt;</span>级<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 weatherDiv"</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>明天(<span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].date</span><span class="xml"><span class="tag">%&gt;</span>)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://files.heweather.com/cond_icon/&lt;%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">1</span>].cond.code_d</span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">alt</span>=<span class="string">"sss"</span>/&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].tmp.min</span><span class="xml"><span class="tag">%&gt;</span>~<span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">1</span>].tmp.max</span><span class="xml"><span class="tag">%&gt;</span>摄氏度<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].cond.text_d</span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].wind.dir</span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].wind.sc</span><span class="xml"><span class="tag">%&gt;</span>级<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-2 weatherDiv"</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span>后天(<span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].date</span><span class="xml"><span class="tag">%&gt;</span>)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://files.heweather.com/cond_icon/&lt;%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">2</span>].cond.code_d</span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">alt</span>=<span class="string">"sss"</span>/&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].tmp.min</span><span class="xml"><span class="tag">%&gt;</span>~<span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">2</span>].tmp.max</span><span class="xml"><span class="tag">%&gt;</span>摄氏度摄氏度<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].cond.text_d</span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].wind.dir</span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby">HeWeather[<span class="number">0</span>].daily_forecast[<span class="number">0</span>].wind.sc</span><span class="xml"><span class="tag">%&gt;</span>级<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">			<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="解析JSON数据-1"><a href="#解析JSON数据-1" class="headerlink" title="解析JSON数据"></a>解析JSON数据</h2><p>安装request包<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span> request <span class="comment">--save</span></div></pre></td></tr></table></figure></p>
+<p>添加使用代码，解析和风传来的参数<br>    拼接字符串：<a href="https://free-api.heweather.com/v5/forecast?key=cb77d4e4750e4d6fb56c91091e401bc4&amp;city=jinan" target="_blank" rel="external">https://free-api.heweather.com/v5/forecast?key=cb77d4e4750e4d6fb56c91091e401bc4&amp;city=jinan</a><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p><img src="../assets/blogPic/nodejsweather/01.png" alt="结果"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>~(@^_^@)~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/paycode.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weChatePayCode.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://a5566baga.cn/2017/02/15/Node-js创建一个显示天气的服务/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/08/struts2使用注意/" class="archive-article-date">
-  	<time datetime="2017-02-08T13:56:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/08/struts2使用注意/">struts2使用注意</a>
-    </h1>
+  
+    <a href="/2017/02/14/Node-js搭建本地静态服务器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js搭建本地静态服务器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Node-js创建一个显示天气的服务" data-title="Node.js创建一个显示天气的服务" data-url="http://a5566baga.cn/2017/02/15/Node-js创建一个显示天气的服务/" style="margin:40px;border:4px solid #CCCCCC;padding:15px;border-radius:15px;"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"a5566baga"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts2</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/FitBody客户端功能设计/" class="archive-article-date">
-  	<time datetime="2017-02-06T11:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/FitBody客户端功能设计/">FitBody客户端功能设计</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/简单斗鱼网站页面/" class="archive-article-date">
-  	<time datetime="2017-02-06T10:43:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/简单斗鱼网站页面/">简单斗鱼网站页面</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/05/调查问卷/" class="archive-article-date">
-  	<time datetime="2017-02-05T14:26:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/05/调查问卷/">调查问卷</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/05/CSS3动画/" class="archive-article-date">
-  	<time datetime="2017-02-05T02:15:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/05/CSS3动画/">CSS3动画</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/04/开题报告/" class="archive-article-date">
-  	<time datetime="2017-02-04T14:24:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/04/开题报告/">开题报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/04/H5知识简单总结/" class="archive-article-date">
-  	<time datetime="2017-02-04T10:09:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/04/H5知识简单总结/">H5知识简单总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/03/部署GitHub-域名/" class="archive-article-date">
-  	<time datetime="2017-02-03T13:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/03/部署GitHub-域名/">部署GitHub-域名</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/03/hexo-theme-yilia简单配置/" class="archive-article-date">
-  	<time datetime="2017-02-03T11:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/03/hexo-theme-yilia简单配置/">hexo-theme-yilia简单配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -618,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
