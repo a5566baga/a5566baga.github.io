@@ -8,37 +8,19 @@
   <link rel="dns-prefetch" href="http://a5566baga.cn">
   <title>hibernate4.3一对多基本配置 | play~man专属</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="表与表之间的关联映射（ 基于Hibernate4.3）#### 单向一对多配置
-#### 单向多对一配置
-#### 双向一对多配置
-#### 其它属性
-单向一对多的关系（基本配置）
-在数据库中，可以通过添加主外键的关联，表现一对多的关系
-通过一方持有多方的集合实现，即在“一”的一端中使用元素表示持有“多”的一端的现象
-  配置的时候要在一的一方创建多的一方的set集合，同时xml文件中配置对应多的">
+  <meta name="description" content="表与表之间的关联映射（ 基于Hibernate4.3）
+单向一对多配置单向多对一配置双向一对多配置其它属性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hibernate4.3一对多基本配置">
 <meta property="og:url" content="http://a5566baga.cn/2017/02/18/hibernate4-3一对多基本配置/index.html">
 <meta property="og:site_name" content="play~man专属">
-<meta property="og:description" content="表与表之间的关联映射（ 基于Hibernate4.3）#### 单向一对多配置
-#### 单向多对一配置
-#### 双向一对多配置
-#### 其它属性
-单向一对多的关系（基本配置）
-在数据库中，可以通过添加主外键的关联，表现一对多的关系
-通过一方持有多方的集合实现，即在“一”的一端中使用元素表示持有“多”的一端的现象
-  配置的时候要在一的一方创建多的一方的set集合，同时xml文件中配置对应多的">
-<meta property="og:updated_time" content="2017-02-18T07:40:46.312Z">
+<meta property="og:description" content="表与表之间的关联映射（ 基于Hibernate4.3）
+单向一对多配置单向多对一配置双向一对多配置其它属性">
+<meta property="og:updated_time" content="2017-02-18T07:45:42.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hibernate4.3一对多基本配置">
-<meta name="twitter:description" content="表与表之间的关联映射（ 基于Hibernate4.3）#### 单向一对多配置
-#### 单向多对一配置
-#### 双向一对多配置
-#### 其它属性
-单向一对多的关系（基本配置）
-在数据库中，可以通过添加主外键的关联，表现一对多的关系
-通过一方持有多方的集合实现，即在“一”的一端中使用元素表示持有“多”的一端的现象
-  配置的时候要在一的一方创建多的一方的set集合，同时xml文件中配置对应多的">
+<meta name="twitter:description" content="表与表之间的关联映射（ 基于Hibernate4.3）
+单向一对多配置单向多对一配置双向一对多配置其它属性">
   
     <link rel="alternative" href="/atom.xml" title="play~man专属" type="application/atom+xml">
   
@@ -230,11 +212,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="表与表之间的关联映射（-基于Hibernate4-3）"><a href="#表与表之间的关联映射（-基于Hibernate4-3）" class="headerlink" title="表与表之间的关联映射（ 基于Hibernate4.3）"></a>表与表之间的关联映射（ 基于Hibernate4.3）</h1><pre><code>#### 单向一对多配置
-#### 单向多对一配置
-#### 双向一对多配置
-#### 其它属性
-</code></pre><h2 id="单向一对多的关系（基本配置）"><a href="#单向一对多的关系（基本配置）" class="headerlink" title="单向一对多的关系（基本配置）"></a>单向一对多的关系（基本配置）</h2><ul>
+        <h1 id="表与表之间的关联映射（-基于Hibernate4-3）"><a href="#表与表之间的关联映射（-基于Hibernate4-3）" class="headerlink" title="表与表之间的关联映射（ 基于Hibernate4.3）"></a>表与表之间的关联映射（ 基于Hibernate4.3）</h1><blockquote>
+<h4 id="单向一对多配置"><a href="#单向一对多配置" class="headerlink" title="单向一对多配置"></a>单向一对多配置</h4><h4 id="单向多对一配置"><a href="#单向多对一配置" class="headerlink" title="单向多对一配置"></a>单向多对一配置</h4><h4 id="双向一对多配置"><a href="#双向一对多配置" class="headerlink" title="双向一对多配置"></a>双向一对多配置</h4><h4 id="其它属性"><a href="#其它属性" class="headerlink" title="其它属性"></a>其它属性</h4></blockquote>
+<a id="more"></a>
+<h2 id="单向一对多的关系（基本配置）"><a href="#单向一对多的关系（基本配置）" class="headerlink" title="单向一对多的关系（基本配置）"></a>单向一对多的关系（基本配置）</h2><ul>
 <li>在数据库中，可以通过添加主外键的关联，表现一对多的关系</li>
 <li><p>通过一方持有多方的集合实现，即在“一”的一端中使用<set>元素表示持有“多”的一端的现象</set></p>
 <p>  配置的时候要在一的一方创建多的一方的set集合，同时xml文件中配置<set>对应多的一方的外键值。这时候多方pojo中的属性是一方的id。</set></p>
