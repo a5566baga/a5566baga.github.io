@@ -4,8 +4,27 @@
 
     
   <url>
+    <loc>http://a5566baga.cn/2017/02/18/Express%E8%BF%90%E7%94%A8AJAX/</loc>
+    <lastmod>2017-02-18T07:56:57.957Z</lastmod>
+    <data>
+        <display>
+        <title>Express运用AJAX</title>
+        <pubTime>2017-02-18T07:56:06.000Z</pubTime>
+        
+        <tag>Node.js</tag>
+         
+        <tag>前台</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://a5566baga.cn/2017/02/18/hibernate4-3%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-02-18T07:45:42.269Z</lastmod>
+    <lastmod>2017-02-18T07:52:25.106Z</lastmod>
     <data>
         <display>
         <title>hibernate4.3一对多基本配置</title>
@@ -30,9 +49,9 @@
         <title>Node.js学习express框架</title>
         <pubTime>2017-02-16T11:40:49.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -87,9 +106,9 @@
         <title>Node.js新闻添加的小案例</title>
         <pubTime>2017-02-16T11:35:23.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -106,9 +125,9 @@
         <title>Node.js中间件使用</title>
         <pubTime>2017-02-16T11:33:48.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -125,9 +144,9 @@
         <title>Node.js创建一个显示天气的服务</title>
         <pubTime>2017-02-15T12:15:17.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -144,9 +163,9 @@
         <title>Node.js安装与nmp的基本使用</title>
         <pubTime>2017-02-13T12:00:02.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -163,9 +182,9 @@
         <title>Node.js搭建本地静态服务器</title>
         <pubTime>2017-02-14T11:11:05.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            

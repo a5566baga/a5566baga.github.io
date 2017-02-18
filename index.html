@@ -190,6 +190,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Express运用AJAX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/18/Express运用AJAX/">Express运用AJAX</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/18/Express运用AJAX/" class="archive-article-date">
+  	<time datetime="2017-02-18T07:56:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="什么是AJAX"><a href="#什么是AJAX" class="headerlink" title="什么是AJAX"></a>什么是AJAX</h2><pre><code>目的是为了减少表单在过程中过多请求相同页面导致的带宽浪费问题，同时可以减少表单填写错误而必须填写整套表单而带来的用户体验下滑。
+</code></pre><h2 id="创建XMLHttpRequest"><a href="#创建XMLHttpRequest" class="headerlink" title="创建XMLHttpRequest"></a>创建XMLHttpRequest</h2><ul>
+<li><p>状态机 01234 可以增强用户体验</p>
+<p>  0：刚开始</p>
+<p>  1：开始</p>
+<p>  2：刚接受头部</p>
+<p>  3：下载响应体</p>
+<p>  4：搞定完成</p>
+</li>
+</ul>
+<h2 id="注册验证小例子"><a href="#注册验证小例子" class="headerlink" title="注册验证小例子"></a>注册验证小例子</h2><p>index.js路由配置中<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/checkname'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> username = req.query.username;</div><div class="line">    <span class="keyword">var</span> str = <span class="string">'zzq'</span>;</div><div class="line">    <span class="keyword">if</span>(str === username)&#123;</div><div class="line">        res.send(username + <span class="string">'已经存在'</span>);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        res.send(<span class="string">'用户名可以使用'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>index.ejs页面设置<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">input</span> type=<span class="string">"text"</span> name=<span class="string">"username"</span> value=<span class="string">""</span> id=<span class="string">"username"</span>&gt;</div><div class="line">&lt;<span class="selector-tag">span</span> id=<span class="string">"info"</span>&gt;&lt;/span&gt;</div></pre></td></tr></table></figure></p>
+<p>js代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> req = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    <span class="keyword">var</span> input = <span class="built_in">document</span>.getElementById(<span class="string">'username'</span>);</div><div class="line">    <span class="keyword">var</span> info = <span class="built_in">document</span>.getElementById(<span class="string">'info'</span>);</div><div class="line">    input.addEventListener(<span class="string">"blur"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">//get请求，数据随url传输</span></div><div class="line">        req.open(<span class="string">'get'</span>,<span class="string">'/checkname?username='</span>+input.value);</div><div class="line">        req.send();</div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span>(req.readyState === <span class="number">4</span>)&#123;</div><div class="line">                info.innerHTML = req.responseText;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<pre><code>注意：
+var req = new XMLHttpRequest();
+1.接受数据——req.responseText;
+router.get(&apos;/checkname&apos;, function (req, res, next)
+1.路由接收get参数——var username = req.query.username;
+2.路由接收post参数——req.body.username;
+</code></pre><h2 id="从后端向前段传JSON数据"><a href="#从后端向前段传JSON数据" class="headerlink" title="从后端向前段传JSON数据"></a>从后端向前段传JSON数据</h2><p>页面文件js内容(用JQuery写)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $(<span class="string">'button'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">            $.ajax(&#123;</div><div class="line">                <span class="attr">url</span>:<span class="string">'/getZZ'</span>,</div><div class="line">                <span class="attr">type</span>:<span class="string">'get'</span>,</div><div class="line">                <span class="attr">data</span>:&#123;<span class="attr">name</span>:<span class="string">'zzq'</span>&#125;,</div><div class="line">                <span class="attr">success</span>:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">                    <span class="comment">// 从后端取数据，并动态显示于页面</span></div><div class="line">                    <span class="comment">// 后端数据在data中</span></div><div class="line">                    $(<span class="string">'&lt;h1&gt;&lt;/h1&gt;'</span>).addClass(<span class="string">'title'</span>).text(data.title).appendTo($(<span class="string">'#container'</span>));</div><div class="line">                    $(<span class="string">'&lt;h2&gt;&lt;/h2&gt;'</span>).addClass(<span class="string">'des'</span>).text(data.src).appendTo($(<span class="string">'#container'</span>));</div><div class="line">                    $(<span class="string">'&lt;p&gt;&lt;/p&gt;'</span>).addClass(<span class="string">'content'</span>).text(data.content).appendTo($(<span class="string">'#container'</span>));</div><div class="line">                &#125;,</div><div class="line">                <span class="attr">error</span>:<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>路由index.js配置<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/getzz'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;</div><div class="line">        title:<span class="string">'今日头条:lalalalalla'</span>,</div><div class="line">        src:<span class="string">'今日来源:hehehehehehe'</span>,</div><div class="line">        content:<span class="string">'buzhiodao 不知道。。。。'</span></div><div class="line">    &#125;</div><div class="line">    res.json(obj);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<pre><code>注意：post写法相同，但传递的方式不同，接收用req.body接收
+</code></pre><h2 id="跨域访问"><a href="#跨域访问" class="headerlink" title="跨域访问"></a>跨域访问</h2><h4 id="什么是源"><a href="#什么是源" class="headerlink" title="什么是源"></a>什么是源</h4><pre><code>源是指资源，网络中能请求到的都是资源。请求资源需要使用统一资源定位符。(Uniform Resource Locator,简称URL)
+</code></pre><h4 id="什么是同源"><a href="#什么是同源" class="headerlink" title="什么是同源"></a>什么是同源</h4><pre><code>两个页面拥有相同的协议、端口、主机域名，name这两个就是同源页面。
+</code></pre><h4 id="跨域请求中间件"><a href="#跨域请求中间件" class="headerlink" title="跨域请求中间件"></a>跨域请求中间件</h4><p><a href="https://enable-cors.org/server_expressjs.html" target="_blank" rel="external">文档网站</a><br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span></span> &#123;</div><div class="line">  res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</div><div class="line">  res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Origin, X-Requested-With, Content-Type, Accept"</span>);</div><div class="line">  <span class="built_in">next</span>();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/18/Express运用AJAX/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-hibernate4-3一对多基本配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -299,11 +389,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		
 		</ul>
@@ -737,11 +827,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		
 		</ul>
@@ -806,11 +896,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		
 		</ul>
@@ -875,11 +965,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		
 		</ul>
@@ -947,11 +1037,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		
 		</ul>
@@ -1079,76 +1169,6 @@
 
 
   
-    <article id="post-struts2拦截器配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/13/struts2拦截器配置/">struts2拦截器配置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/13/struts2拦截器配置/" class="archive-article-date">
-  	<time datetime="2017-02-13T12:03:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><h5 id="struts-xml中"><a href="#struts-xml中" class="headerlink" title="struts.xml中"></a>struts.xml中</h5><pre><code>name：自定义拦截器的名称
-class：拦截器所在的类
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;interceptor name=<span class="string">"myInterceptor"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.ben.interceptor.MyInterceptor"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">interceptor</span>&gt;</span></span></div><div class="line">&lt;action name=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">""</span>&gt;</div><div class="line">	<span class="xml"><span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"defaultStack"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></span></div><div class="line">	<span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"myInterceptor"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></div></pre></td></tr></table></figure>
-<h6 id="MyInterceptor-java"><a href="#MyInterceptor-java" class="headerlink" title="MyInterceptor.java"></a>MyInterceptor.java</h6><pre><code>实现Interceptor接口，重写方法
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ben.interceptor;</div><div class="line"><span class="keyword">import</span> com.opensymphony.xwork2.ActionInvocation;</div><div class="line"><span class="keyword">import</span> com.opensymphony.xwork2.interceptor.Interceptor;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">implements</span> <span class="title">Interceptor</span></span>&#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">intercept</span><span class="params">(ActionInvocation arg0)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/13/struts2拦截器配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1258,7 +1278,7 @@ class：拦截器所在的类
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1266,11 +1286,7 @@ class：拦截器所在的类
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
+                <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1279,6 +1295,10 @@ class：拦截器所在的类
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">struts2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
               </li>
              
               <li class="article-tag-list-item">
