@@ -6,17 +6,138 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://a5566baga.cn">
-  <title>Tag: 毕业设计 | play~man专属</title>
+  <title>Hibernate一对一关系映射 | play~man专属</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="那个男人~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="play~man专属">
-<meta property="og:url" content="http://a5566baga.cn/tags/毕业设计/index.html">
+  <meta name="description" content="一对一关系表与表之间互相对应，各式互相的唯一
+常用的例子是：身份证和人之间的关系，或是工作证与个人的关系，我这里举例老师和工作证的关系。
+teachers表
+
+
+字段名
+类型
+约束
+
+
+
+
+id
+int
+主键
+
+
+t_name
+varchar
+
+
+
+
+card表
+
+
+字段名
+类型
+约束
+
+
+
+
+card_num
+varchar
+
+
+
+t_id
+int
+主键/外键">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate一对一关系映射">
+<meta property="og:url" content="http://a5566baga.cn/2017/02/20/Hibernate一对一关系映射/index.html">
 <meta property="og:site_name" content="play~man专属">
-<meta property="og:description" content="那个男人~">
+<meta property="og:description" content="一对一关系表与表之间互相对应，各式互相的唯一
+常用的例子是：身份证和人之间的关系，或是工作证与个人的关系，我这里举例老师和工作证的关系。
+teachers表
+
+
+字段名
+类型
+约束
+
+
+
+
+id
+int
+主键
+
+
+t_name
+varchar
+
+
+
+
+card表
+
+
+字段名
+类型
+约束
+
+
+
+
+card_num
+varchar
+
+
+
+t_id
+int
+主键/外键">
+<meta property="og:updated_time" content="2017-02-20T12:55:26.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="play~man专属">
-<meta name="twitter:description" content="那个男人~">
+<meta name="twitter:title" content="Hibernate一对一关系映射">
+<meta name="twitter:description" content="一对一关系表与表之间互相对应，各式互相的唯一
+常用的例子是：身份证和人之间的关系，或是工作证与个人的关系，我这里举例老师和工作证的关系。
+teachers表
+
+
+字段名
+类型
+约束
+
+
+
+
+id
+int
+主键
+
+
+t_name
+varchar
+
+
+
+
+card表
+
+
+字段名
+类型
+约束
+
+
+
+
+card_num
+varchar
+
+
+
+t_id
+int
+主键/外键">
   
     <link rel="alternative" href="/atom.xml" title="play~man专属" type="application/atom+xml">
   
@@ -188,174 +309,243 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Hibernate一对一关系映射" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hibernate一对一关系映射
+    </h1>
+  
+
+        
+        <a href="/2017/02/20/Hibernate一对一关系映射/" class="archive-article-date">
+  	<time datetime="2017-02-20T12:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h1><pre><code>表与表之间互相对应，各式互相的唯一
+常用的例子是：身份证和人之间的关系，或是工作证与个人的关系，我这里举例老师和工作证的关系。
+</code></pre><h4 id="teachers表"><a href="#teachers表" class="headerlink" title="teachers表"></a>teachers表</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键</td>
+</tr>
+<tr>
+<td style="text-align:center">t_name</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="card表"><a href="#card表" class="headerlink" title="card表"></a>card表</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">card_num</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">t_id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键/外键</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h4 id="Teachers-java"><a href="#Teachers-java" class="headerlink" title="Teachers.java"></a>Teachers.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ben.pojo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.Serializable;</div><div class="line"><span class="keyword">import</span> java.util.HashSet;</div><div class="line"><span class="keyword">import</span> java.util.Set;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teachers</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String tName;</div><div class="line">    <span class="comment">//card对象</span></div><div class="line">    <span class="keyword">private</span> Card card;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">gettName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> tName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">settName</span><span class="params">(String tName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.tName = tName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Card <span class="title">getCard</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> card;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCard</span><span class="params">(Card card)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.card = card;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Teachers</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Teachers</span><span class="params">(String tName)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.tName = tName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Card-java"><a href="#Card-java" class="headerlink" title="Card.java"></a>Card.java</h4><pre><code>注意：一个tId设置为主键；一个teacher设置为外键的对象。
+即——主键表因为主外键都是一个字段，所以在域对象设定的时候要设置主键和外键。
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ben.pojo;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.Serializable;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Card</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Integer tId;</div><div class="line">    <span class="keyword">private</span> Teachers teacher;</div><div class="line">    <span class="keyword">private</span> String cardNum;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">gettId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> tId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">settId</span><span class="params">(Integer tId)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.tId = tId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Teachers <span class="title">getTeacher</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> teacher;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTeacher</span><span class="params">(Teachers teacher)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.teacher = teacher;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCardNum</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> cardNum;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCardNum</span><span class="params">(String cardNum)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.cardNum = cardNum;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Card</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Card</span><span class="params">(Teachers teacher, String cardNum)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.teacher = teacher;</div><div class="line">        <span class="keyword">this</span>.cardNum = cardNum;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Teachers-hbm-xml"><a href="#Teachers-hbm-xml" class="headerlink" title="Teachers.hbm.xml"></a>Teachers.hbm.xml</h4><pre><code>注意：外键表，要设置级联关系
+</code></pre><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.ben.pojo.Teachers"</span> <span class="attr">table</span>=<span class="string">"teachers"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">type</span>=<span class="string">"java.lang.Integer"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>&gt;</span><span class="tag">&lt;/<span class="name">generator</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"tName"</span> <span class="attr">type</span>=<span class="string">"java.lang.String"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"t_name"</span>&gt;</span><span class="tag">&lt;/<span class="name">column</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="comment">&lt;!-- &lt;set name="grades" cascade="save-update"&gt;</span></div><div class="line">            &lt;key column="gid"&gt;&lt;/key&gt;</div><div class="line">            &lt;many-to-many&gt;&lt;/many-to-many&gt;</div><div class="line">        &lt;/set&gt; --&gt;</div><div class="line"></div><div class="line">        <span class="comment">&lt;!-- 一对一,外键表配置级联关系 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">one-to-one</span> <span class="attr">name</span>=<span class="string">"card"</span> <span class="attr">class</span>=<span class="string">"com.ben.pojo.Card"</span> <span class="attr">cascade</span>=<span class="string">"all"</span>&gt;</span><span class="tag">&lt;/<span class="name">one-to-one</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="Card-hbm-xml"><a href="#Card-hbm-xml" class="headerlink" title="Card.hbm.xml"></a>Card.hbm.xml</h4><pre><code>注意：这里主键的生成方式为&apos;foreign&apos;。
+&lt;param name=&quot;property&quot;&gt;&lt;/param&gt;中间的参数与下文配置的name相同
+</code></pre><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.ben.pojo.Card"</span> <span class="attr">table</span>=<span class="string">"card"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"tId"</span> <span class="attr">column</span>=<span class="string">"t_id"</span> <span class="attr">type</span>=<span class="string">"java.lang.Integer"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"foreign"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"property"</span>&gt;</span>teacher<span class="tag">&lt;/<span class="name">param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">generator</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cardNum"</span> <span class="attr">type</span>=<span class="string">"java.lang.String"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">column</span> <span class="attr">name</span>=<span class="string">"card_num"</span>&gt;</span><span class="tag">&lt;/<span class="name">column</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="comment">&lt;!-- 一对一 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">one-to-one</span> <span class="attr">name</span>=<span class="string">"teacher"</span> <span class="attr">class</span>=<span class="string">"com.ben.pojo.Teachers"</span>&gt;</span><span class="tag">&lt;/<span class="name">one-to-one</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">@Test</div><div class="line">public void test() &#123;</div><div class="line">    Session session = MySessionFactory.getSession()<span class="comment">;</span></div><div class="line">    Transaction tx = session.<span class="keyword">beginTransaction();</span></div><div class="line"></div><div class="line">    Teachers t = new Teachers(<span class="string">"laoshi2"</span>)<span class="comment">;</span></div><div class="line">    Card c = new Card(t, <span class="string">"11223344556688"</span>)<span class="comment">;</span></div><div class="line">    t.setCard(c)<span class="comment">;</span></div><div class="line">    session.save(t)<span class="comment">;</span></div><div class="line"></div><div class="line">    tx.commit()<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>注意，在创建Teachers对象后，不要忘记设置Card，否则保存Teachers对象会不保存Card的。但是这时保存Card会保存Teachers对象，自己要理好关系。
+</code></pre><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Hibernate:</div><div class="line">    <span class="keyword">insert</span></div><div class="line">    <span class="keyword">into</span></div><div class="line">        teachers</div><div class="line">        (t_name)</div><div class="line">    <span class="keyword">values</span></div><div class="line">        (?)</div><div class="line">Hibernate:</div><div class="line">    <span class="keyword">insert</span></div><div class="line">    <span class="keyword">into</span></div><div class="line">        card</div><div class="line">        (card_num, t_id)</div><div class="line">    <span class="keyword">values</span></div><div class="line">        (?, ?)</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>~(@^_^@)~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/paycode.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weChatePayCode.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/09/FitBody商家端需求分析/" class="archive-article-date">
-  	<time datetime="2017-02-09T12:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/09/FitBody商家端需求分析/">FitBody商家端需求分析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/FitBody客户端功能设计/" class="archive-article-date">
-  	<time datetime="2017-02-06T11:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/FitBody客户端功能设计/">FitBody客户端功能设计</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://a5566baga.cn/2017/02/20/Hibernate一对一关系映射/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/05/调查问卷/" class="archive-article-date">
-  	<time datetime="2017-02-05T14:26:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/05/调查问卷/">调查问卷</a>
-    </h1>
+    <a href="/2017/02/20/Node-js中MySQL的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Node.js中MySQL的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/19/我的作品集/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的作品集</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Hibernate一对一关系映射" data-title="Hibernate一对一关系映射" data-url="http://a5566baga.cn/2017/02/20/Hibernate一对一关系映射/" style="margin:40px;border:4px solid #CCCCCC;padding:15px;border-radius:15px;"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"a5566baga"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/04/开题报告/" class="archive-article-date">
-  	<time datetime="2017-02-04T14:24:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/04/开题报告/">开题报告</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -378,9 +568,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",

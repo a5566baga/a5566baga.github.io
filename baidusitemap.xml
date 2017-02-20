@@ -4,6 +4,44 @@
 
     
   <url>
+    <loc>http://a5566baga.cn/2017/02/20/Node-js%E4%B8%ADMySQL%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2017-02-20T12:57:36.873Z</lastmod>
+    <data>
+        <display>
+        <title>Node.js中MySQL的使用</title>
+        <pubTime>2017-02-20T12:53:15.000Z</pubTime>
+        
+        <tag>Node.js</tag>
+         
+        <tag>前台</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://a5566baga.cn/2017/02/20/Hibernate%E4%B8%80%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB%E6%98%A0%E5%B0%84/</loc>
+    <lastmod>2017-02-20T12:55:26.773Z</lastmod>
+    <data>
+        <display>
+        <title>Hibernate一对一关系映射</title>
+        <pubTime>2017-02-20T12:52:40.000Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>Hibernate</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://a5566baga.cn/2017/02/19/%E6%88%91%E7%9A%84%E4%BD%9C%E5%93%81%E9%9B%86/</loc>
     <lastmod>2017-02-19T13:44:50.553Z</lastmod>
     <data>
@@ -28,9 +66,9 @@
         <title>Express运用AJAX</title>
         <pubTime>2017-02-18T07:56:06.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -66,9 +104,9 @@
         <title>Node.js学习express框架</title>
         <pubTime>2017-02-16T11:40:49.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -123,9 +161,9 @@
         <title>Node.js新闻添加的小案例</title>
         <pubTime>2017-02-16T11:35:23.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -142,9 +180,9 @@
         <title>Node.js中间件使用</title>
         <pubTime>2017-02-16T11:33:48.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -161,9 +199,9 @@
         <title>Node.js创建一个显示天气的服务</title>
         <pubTime>2017-02-15T12:15:17.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -180,9 +218,9 @@
         <title>Node.js安装与nmp的基本使用</title>
         <pubTime>2017-02-13T12:00:02.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
@@ -199,9 +237,9 @@
         <title>Node.js搭建本地静态服务器</title>
         <pubTime>2017-02-14T11:11:05.000Z</pubTime>
         
-        <tag>前台</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>前台</tag>
          
          
            
