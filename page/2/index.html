@@ -67,9 +67,9 @@
 	        
 				<li><a href="/tags/杂谈">杂谈</a></li>
 	        
-				<li><a href="/tags/健身&餐饮">健身&amp;餐饮</a></li>
+				<li><a href="/tags/健身">健身&amp;餐饮</a></li>
 	        
-				<li><a href="/tags/足球&生活">足球&amp;生活</a></li>
+				<li><a href="/tags/足球生活">足球&amp;生活</a></li>
 	        
 				<li><a href="/tags/毕业设计">毕业设计</a></li>
 	        
@@ -169,9 +169,9 @@
 		        
 					<li style="width: 12.5%"><a href="/tags/杂谈">杂谈</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/健身&餐饮">健身&amp;餐饮</a></li>
+					<li style="width: 12.5%"><a href="/tags/健身">健身&amp;餐饮</a></li>
 		        
-					<li style="width: 12.5%"><a href="/tags/足球&生活">足球&amp;生活</a></li>
+					<li style="width: 12.5%"><a href="/tags/足球生活">足球&amp;生活</a></li>
 		        
 					<li style="width: 12.5%"><a href="/tags/毕业设计">毕业设计</a></li>
 		        
@@ -189,6 +189,85 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Node-js新闻添加的小案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/16/Node-js新闻添加的小案例/">Node.js新闻添加的小案例</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/16/Node-js新闻添加的小案例/" class="archive-article-date">
+  	<time datetime="2017-02-16T11:35:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Node-js新闻添加的小案例"><a href="#Node-js新闻添加的小案例" class="headerlink" title="Node.js新闻添加的小案例"></a>Node.js新闻添加的小案例</h1><blockquote>
+<h4 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h4><ul>
+<li>save文件夹</li>
+<li>admin.html</li>
+<li>shownews.ejs</li>
+</ul>
+</blockquote>
+<h5 id="admin-thml"><a href="#admin-thml" class="headerlink" title="admin.thml"></a>admin.thml</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">style</span> <span class="attr">media</span>=<span class="string">"screen"</span>&gt;</span><span class="css"></span></div><div class="line">            <span class="selector-tag">form</span>&#123;</div><div class="line">                <span class="attribute">width</span>: <span class="number">800px</span>;</div><div class="line">                <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">                <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#4c4c4c</span>;</div><div class="line">                <span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">            &#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>新闻后台<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">action</span>=<span class="string">"/addnews"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"titile"</span>&gt;</span>新闻标题<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"title"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"title"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"pic"</span>&gt;</span>新闻图片<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"pic"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"pic"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"newssrc"</span>&gt;</span>新闻来源<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"newssrc"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"newssrc"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"newstime"</span>&gt;</span>新闻时间<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"newstime"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"newstime"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"提交新闻"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="shownews-ejs"><a href="#shownews-ejs" class="headerlink" title="shownews.ejs"></a>shownews.ejs</h4><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>新闻<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">for</span>(var i=<span class="number">0</span>; i&lt;newslist.length; i++)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby"> newslist[i].title </span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&lt;%=</span></span><span class="ruby"> newslist[i].pic </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby"> newslist[i].newstime </span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span><span class="ruby"> newslist[i].newssrc </span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h4><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = require(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> request = require(<span class="string">'request'</span>);</div><div class="line"><span class="keyword">var</span> bodyParser = require(<span class="string">'body-parser'</span>);</div><div class="line"><span class="keyword">var</span> fs = require(<span class="string">'fs'</span>);<span class="comment">//文件的读写</span></div><div class="line"></div><div class="line">app.use(express.<span class="keyword">static</span>(<span class="string">'./public/'</span>));</div><div class="line">app.<span class="keyword">set</span>(<span class="string">'views'</span>,<span class="string">'./views'</span>);</div><div class="line">app.<span class="keyword">set</span>(<span class="string">'view engine'</span>,<span class="string">'ejs'</span>);</div><div class="line"></div><div class="line">app.use(bodyParser.json());</div><div class="line">app.use(bodyParser.urlencoded(&#123;extended:<span class="type">true</span>&#125;));</div><div class="line"></div><div class="line"><span class="comment">//添加新闻</span></div><div class="line">app.post(<span class="string">'/addnews'</span>, <span class="function"><span class="keyword">function</span> </span>(req,res) &#123;</div><div class="line">    console.log(req.body);</div><div class="line">    fs.readFile(<span class="string">'./save/news.json'</span>, <span class="function"><span class="keyword">function</span> </span>(err,data) &#123;</div><div class="line">        <span class="keyword">var</span> <span class="keyword">new</span><span class="type">slist</span>;</div><div class="line">        <span class="keyword">if</span>(data.toString() === <span class="string">''</span>)&#123;</div><div class="line">            <span class="keyword">new</span><span class="type">slist</span> = [];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">new</span><span class="type">slist</span> = JSON.parse(data);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> <span class="keyword">new</span><span class="type">s</span> = &#123;&#125;;</div><div class="line">        <span class="keyword">new</span><span class="type">s</span>.title = req.body.title;</div><div class="line">        <span class="keyword">new</span><span class="type">s</span>.pic = req.body.pic;</div><div class="line">        <span class="keyword">new</span><span class="type">s</span>.<span class="keyword">new</span><span class="type">ssrc</span> = req.body.<span class="keyword">new</span><span class="type">ssrc</span>;</div><div class="line">        <span class="keyword">new</span><span class="type">s</span>.<span class="keyword">new</span><span class="type">stime</span> = req.body.<span class="keyword">new</span><span class="type">stime</span>;</div><div class="line"></div><div class="line">        <span class="keyword">new</span><span class="type">slist</span>.push(<span class="keyword">new</span><span class="type">s</span>);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> str = JSON.stringify(<span class="keyword">new</span><span class="type">slist</span>);</div><div class="line">        fs.writeFile(<span class="string">'./save/news.json'</span>,str,<span class="string">'UTF-8'</span>);</div><div class="line">        res.send(<span class="string">'添加成功'</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line">app.<span class="keyword">get</span>(<span class="string">"/news"</span>, <span class="function"><span class="keyword">function</span> </span>(req, res) &#123;</div><div class="line">    fs.readFile(<span class="string">'./save/news.json'</span>, <span class="function"><span class="keyword">function</span> </span>(err,data) &#123;</div><div class="line">        <span class="keyword">var</span> list = JSON.parse(data);</div><div class="line">        res.render(<span class="string">'shownews'</span>,&#123;<span class="keyword">new</span><span class="type">slist</span>:list&#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span></span>()&#123;</div><div class="line">	console.log(<span class="string">"server 3000 running!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="注意-相关的依赖包要导入"><a href="#注意-相关的依赖包要导入" class="headerlink" title="注意:相关的依赖包要导入"></a>注意:相关的依赖包要导入</h4><pre><code>- &quot;body-parser&quot;: &quot;^1.16.1&quot;,
+- &quot;ejs&quot;: &quot;^2.5.5&quot;,
+- &quot;express&quot;: &quot;^4.14.1&quot;,
+- &quot;request&quot;: &quot;^2.79.0&quot;
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/16/Node-js新闻添加的小案例/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-Node-js中间件使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -227,11 +306,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
@@ -296,11 +375,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
@@ -368,11 +447,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
@@ -652,11 +731,11 @@ class：拦截器所在的类
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
         		</li>
       		
 		</ul>
@@ -906,71 +985,6 @@ class：拦截器所在的类
 
 
   
-    <article id="post-FitBody商家端需求分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/FitBody商家端需求分析/">FitBody商家端需求分析</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/FitBody商家端需求分析/" class="archive-article-date">
-  	<time datetime="2017-02-09T12:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="商家端功能需求分析"><a href="#商家端功能需求分析" class="headerlink" title="商家端功能需求分析"></a>商家端功能需求分析</h2><blockquote>
-<h4 id="注册-登陆"><a href="#注册-登陆" class="headerlink" title="注册/登陆"></a>注册/登陆</h4><h4 id="设置店铺信息"><a href="#设置店铺信息" class="headerlink" title="设置店铺信息"></a>设置店铺信息</h4><h4 id="维护菜单"><a href="#维护菜单" class="headerlink" title="维护菜单"></a>维护菜单</h4><h4 id="订单维护"><a href="#订单维护" class="headerlink" title="订单维护"></a>订单维护</h4><h4 id="其它功能"><a href="#其它功能" class="headerlink" title="其它功能"></a>其它功能</h4></blockquote>
-        
-          <a class="article-more-a" href="/2017/02/09/FitBody商家端需求分析/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">毕业设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/FitBody商家端需求分析/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1080,11 +1094,11 @@ class：拦截器所在的类
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">前台</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前台</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1093,6 +1107,10 @@ class：拦截器所在的类
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JAVA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1108,19 +1126,19 @@ class：拦截器所在的类
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">struts2</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">足球&生活</a>
+                <a href="javascript:void(0)" class="js-tag color5">足球生活</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">健身</a>
               </li>
             
             <div class="clearfix"></div>
