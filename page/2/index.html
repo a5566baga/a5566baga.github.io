@@ -190,6 +190,276 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库的三种对应关系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/16/数据库的三种对应关系/">数据库的三种对应关系</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/16/数据库的三种对应关系/" class="archive-article-date">
+  	<time datetime="2017-02-16T11:37:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据库关系"><a href="#数据库关系" class="headerlink" title="数据库关系"></a>数据库关系</h2><blockquote>
+<h4 id="1对1关系"><a href="#1对1关系" class="headerlink" title="1对1关系"></a>1对1关系</h4><h4 id="1对多关系"><a href="#1对多关系" class="headerlink" title="1对多关系"></a>1对多关系</h4><h4 id="多对多关系"><a href="#多对多关系" class="headerlink" title="多对多关系"></a>多对多关系</h4></blockquote>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><ul>
+<li>1对1关系<br>例如:一个用户只能对应一个身份证</li>
+</ul>
+<p>t_card</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">主外键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">card_id</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center">约束唯一检查</td>
+</tr>
+<tr>
+<td style="text-align:center">card_date</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">user_id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键/外键</td>
+</tr>
+</tbody>
+</table>
+<p>t_user</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">主外键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键</td>
+</tr>
+<tr>
+<td style="text-align:center">u_name</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">u_age</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">u_role</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>1对多关系<br>例如:一个用户可以有多张订单。<br>通过订单表的u_id外链接到t_users表中即可。</li>
+</ul>
+<p>t_orders</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">主外键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键</td>
+</tr>
+<tr>
+<td style="text-align:center">product_name</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">product_num</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">product_price</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">u_id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>t_users</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">主外键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键</td>
+</tr>
+<tr>
+<td style="text-align:center">u_name</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">u_age</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">u_role</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>多对多关系(需要创建中间表)<br>例如:老师和学生的关系</li>
+</ul>
+<p>中间表(创建联合主键)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">主外键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">t_id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键/外键</td>
+</tr>
+<tr>
+<td style="text-align:center">s_id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键/外键</td>
+</tr>
+</tbody>
+</table>
+<p>老师表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">主外键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>学生表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">主外键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/16/数据库的三种对应关系/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Node-js新闻添加的小案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -915,76 +1185,6 @@ class：拦截器所在的类
 
 
   
-    <article id="post-初识OC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/初识OC/">初识OC</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/初识OC/" class="archive-article-date">
-  	<time datetime="2017-02-09T13:08:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="开发须知"><a href="#开发须知" class="headerlink" title="开发须知"></a>开发须知</h1><hr>
-<blockquote>
-<h3 id="本章节你需要知道的内容——"><a href="#本章节你需要知道的内容——" class="headerlink" title="本章节你需要知道的内容——"></a>本章节你需要知道的内容——</h3><ul>
-<li><h4 id="啥是Objective-C"><a href="#啥是Objective-C" class="headerlink" title="啥是Objective-C"></a>啥是Objective-C</h4></li>
-<li><h4 id="我咋进行编程"><a href="#我咋进行编程" class="headerlink" title="我咋进行编程"></a>我咋进行编程</h4></li>
-</ul>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/02/09/初识OC/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/初识OC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1098,10 +1298,6 @@ class：拦截器所在的类
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
               </li>
              
@@ -1111,6 +1307,10 @@ class：拦截器所在的类
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1139,6 +1339,14 @@ class：拦截器所在的类
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">健身</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Struts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
             
             <div class="clearfix"></div>
