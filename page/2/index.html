@@ -190,6 +190,167 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Node-js学习express框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/16/Node-js学习express框架/">Node.js学习express框架</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/16/Node-js学习express框架/" class="archive-article-date">
+  	<time datetime="2017-02-16T11:40:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Node-js框架学习"><a href="#Node-js框架学习" class="headerlink" title="Node.js框架学习"></a>Node.js框架学习</h1><h2 id="express-js"><a href="#express-js" class="headerlink" title="express.js"></a>express.js</h2><h3 id="express-js是什么"><a href="#express-js是什么" class="headerlink" title="express.js是什么"></a>express.js是什么</h3><blockquote>
+<p>Express基于Node.js平台，快速、开放、极简的web开发框架</p>
+</blockquote>
+<pre><code>其他框架：koa...
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/02/16/Node-js学习express框架/#more">看全呗~ >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/16/Node-js学习express框架/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-struts2验证和后台国际化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/16/struts2验证和后台国际化/">struts2验证和后台国际化</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/16/struts2验证和后台国际化/" class="archive-article-date">
+  	<time datetime="2017-02-16T11:39:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="后台国际化"><a href="#后台国际化" class="headerlink" title="后台国际化"></a>后台国际化</h2><h5 id="配置-properties文件"><a href="#配置-properties文件" class="headerlink" title="配置.properties文件"></a>配置.properties文件</h5><h5 id="继承ActionSupport"><a href="#继承ActionSupport" class="headerlink" title="继承ActionSupport"></a>继承ActionSupport</h5><h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">super</span>.<span class="keyword">getText</span>();</div></pre></td></tr></table></figure>
+<pre><code>注意：getText()里面要传递不同的参数，里面的传的参数与国际化文件的key要相同
+</code></pre><h2 id="验证机制"><a href="#验证机制" class="headerlink" title="验证机制"></a>验证机制</h2><h5 id="写一个方法"><a href="#写一个方法" class="headerlink" title="写一个方法"></a>写一个方法</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">validate</span><span class="params">()</span></span>&#123; &#125;</div></pre></td></tr></table></figure>
+<h5 id="action错误"><a href="#action错误" class="headerlink" title="action错误"></a>action错误</h5><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addActionError()<span class="comment">;</span></div></pre></td></tr></table></figure>
+<pre><code>注意：要配一个“input”返回result。
+     后面的execute方法不再执行。
+</code></pre><h5 id="属性错误"><a href="#属性错误" class="headerlink" title="属性错误"></a>属性错误</h5><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addFieldError()<span class="comment">;</span></div></pre></td></tr></table></figure>
+<h5 id="前台得到错误信息"><a href="#前台得到错误信息" class="headerlink" title="前台得到错误信息"></a>前台得到错误信息</h5><figure class="highlight apache"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="section">&lt;s:actionerror/&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="后台国际化与验证机制联合使用"><a href="#后台国际化与验证机制联合使用" class="headerlink" title="后台国际化与验证机制联合使用"></a>后台国际化与验证机制联合使用</h2><pre><code>在addActionError()中填写getText()即可
+</code></pre><h2 id="json表达"><a href="#json表达" class="headerlink" title="json表达"></a>json表达</h2><ul>
+<li>添加包</li>
+<li>添加类文件</li>
+<li><p>注解</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@ParentPackage</span>(<span class="string">"json-default"</span>)</div><div class="line"><span class="variable">@Namespace</span>(<span class="string">"/"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加方法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getJSON</span><span class="params">()</span></span>&#123;</div><div class="line">	usersList = usersService.queryUsersByQueryStr(<span class="string">""</span>, <span class="string">""</span>, <span class="number">1</span>, <span class="number">10</span>);</div><div class="line">	<span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以配置除去不要响应的属性值</p>
+</li>
+</ul>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ben.action;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.struts2.convention.<span class="keyword">annotation</span>.Action;</div><div class="line"><span class="keyword">import</span> org.apache.struts2.convention.<span class="keyword">annotation</span>.Namespace;</div><div class="line"><span class="keyword">import</span> org.apache.struts2.convention.<span class="keyword">annotation</span>.ParentPackage;</div><div class="line"><span class="keyword">import</span> org.apache.struts2.convention.<span class="keyword">annotation</span>.Result;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.ben.pojo.Users;</div><div class="line"><span class="keyword">import</span> com.ben.service.UsersService;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@ParentPackage(<span class="meta-string">"json-default"</span>)</span></div><div class="line"><span class="meta">@Namespace(<span class="meta-string">"/"</span>)</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonAction</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> UsersService usersService = new UsersService();</div><div class="line">	<span class="keyword">private</span> List&lt;Users&gt; usersList;</div><div class="line">	<span class="keyword">private</span> String message;</div><div class="line"></div><div class="line">	<span class="meta">@Action(value=<span class="meta-string">"jsonDemo"</span>,results=&#123;@Result(name=<span class="meta-string">"success"</span>,type=<span class="meta-string">"json"</span>, params=&#123;<span class="meta-string">"excludeProperties"</span>,<span class="meta-string">"message"</span>&#125;)</span>&#125;)</div><div class="line">	<span class="keyword">public</span> String getJSON()&#123;</div><div class="line">		usersList = usersService.queryUsersByQueryStr(<span class="string">""</span>, <span class="string">""</span>, <span class="number">1</span>, <span class="number">10</span>);</div><div class="line">		<span class="keyword">return</span> <span class="string">"success"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> List&lt;Users&gt; getUsersList() &#123;</div><div class="line">		<span class="keyword">return</span> usersList;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> void setUsersList(List&lt;Users&gt; usersList) &#123;</div><div class="line">		<span class="keyword">this</span>.usersList = usersList;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> String getMessage() &#123;</div><div class="line">		<span class="keyword">return</span> message;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> void setMessage(String message) &#123;</div><div class="line">		<span class="keyword">this</span>.message = message;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="利用JQuery的AJAX获取js内容"><a href="#利用JQuery的AJAX获取js内容" class="headerlink" title="利用JQuery的AJAX获取js内容"></a>利用JQuery的AJAX获取js内容</h5><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">	url:<span class="string">"http://hq.sinajs.cn/list=s_sz399001"</span>,</div><div class="line">	dataType:<span class="string">"script"</span>,</div><div class="line">	cache:<span class="string">"false"</span>,</div><div class="line">	type:<span class="string">"<span class="keyword">GET</span>"</span>,</div><div class="line">	success:function(a)&#123;</div><div class="line">	    alert(hq_str_s_sz399001);</div><div class="line">	    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h5 id="利用JQuery的AJAX获取JSON数据"><a href="#利用JQuery的AJAX获取JSON数据" class="headerlink" title="利用JQuery的AJAX获取JSON数据"></a>利用JQuery的AJAX获取JSON数据</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.getJSON(<span class="string">"http://localhost:8080/ShanShuiManagerStruts/jsonDemo.action"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">json</span>)</span>&#123;</div><div class="line">	alert(<span class="string">"JSON Data: "</span> + json.usersList[<span class="number">0</span>].userName);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts2</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/16/struts2验证和后台国际化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-数据库的三种对应关系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1033,158 +1194,6 @@ class：拦截器所在的类
 
 
   
-    <article id="post-iOS毛玻璃效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/11/iOS毛玻璃效果/">iOS毛玻璃效果</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/11/iOS毛玻璃效果/" class="archive-article-date">
-  	<time datetime="2017-02-11T12:11:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="毛玻璃效果"><a href="#毛玻璃效果" class="headerlink" title="毛玻璃效果"></a>毛玻璃效果</h1><blockquote>
-<h4 id="毛玻璃效果是在iOS8-0之后添加的"><a href="#毛玻璃效果是在iOS8-0之后添加的" class="headerlink" title="毛玻璃效果是在iOS8.0之后添加的"></a>毛玻璃效果是在iOS8.0之后添加的</h4><h4 id="需要创建的对象有"><a href="#需要创建的对象有" class="headerlink" title="需要创建的对象有"></a>需要创建的对象有</h4><blockquote>
-<p>UIImageView 原图片视图<br>UIBlurEffect 毛玻璃设置<br>UIVisualEffectView 毛玻璃视图</p>
-</blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/02/11/iOS毛玻璃效果/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/11/iOS毛玻璃效果/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-OC语法-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/OC语法-01/">OC语法-01</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/OC语法-01/" class="archive-article-date">
-  	<time datetime="2017-02-09T13:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基本类的使用"><a href="#基本类的使用" class="headerlink" title="基本类的使用"></a>基本类的使用</h1><blockquote>
-<h3 id="本章要知道的内容有——"><a href="#本章要知道的内容有——" class="headerlink" title="本章要知道的内容有——"></a>本章要知道的内容有——</h3><ul>
-<li><h5 id="创建一个类"><a href="#创建一个类" class="headerlink" title="创建一个类"></a>创建一个类</h5></li>
-</ul>
-<ul>
-<li><h5 id="声明方法和类方法"><a href="#声明方法和类方法" class="headerlink" title="声明方法和类方法"></a>声明方法和类方法</h5></li>
-</ul>
-<ul>
-<li><h5 id="声明属性-成员变量"><a href="#声明属性-成员变量" class="headerlink" title="声明属性 成员变量"></a>声明属性 成员变量</h5></li>
-</ul>
-<ul>
-<li><h5 id="创建一个对象"><a href="#创建一个对象" class="headerlink" title="创建一个对象"></a>创建一个对象</h5></li>
-</ul>
-<ul>
-<li><h5 id="NSString的使用"><a href="#NSString的使用" class="headerlink" title="NSString的使用"></a>NSString的使用</h5></li>
-</ul>
-<ul>
-<li><h5 id="NSNumber的使用"><a href="#NSNumber的使用" class="headerlink" title="NSNumber的使用"></a>NSNumber的使用</h5></li>
-</ul>
-</blockquote>
-<hr>
-        
-          <a class="article-more-a" href="/2017/02/09/OC语法-01/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/OC语法-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1294,11 +1303,11 @@ class：拦截器所在的类
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前台</a>
+                <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
+                <a href="javascript:void(0)" class="js-tag color3">前台</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1310,15 +1319,27 @@ class：拦截器所在的类
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hinerante</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Struts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1339,14 +1360,6 @@ class：拦截器所在的类
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">健身</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Struts</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
             
             <div class="clearfix"></div>
