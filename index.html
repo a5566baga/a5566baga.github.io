@@ -190,6 +190,374 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-WorkerMan简单理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/WorkerMan简单理解/">WorkerMan简单理解</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/12/WorkerMan简单理解/" class="archive-article-date">
+  	<time datetime="2017-03-12T12:01:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="WorkerMan基本内容"><a href="#WorkerMan基本内容" class="headerlink" title="WorkerMan基本内容"></a>WorkerMan基本内容</h2><h4 id="入口文件"><a href="#入口文件" class="headerlink" title="入口文件"></a>入口文件</h4><ul>
+<li>入口在根目录下定义一个.php文件</li>
+<li>引入命名空间    namespace 路径/包/类名</li>
+<li>使用worker文件，use Workerman/Worker</li>
+<li>加载Autoloader.php, require_once ‘/your/path/Workerman/Autoloader.php’</li>
+</ul>
+<h4 id="一般php文件"><a href="#一般php文件" class="headerlink" title="一般php文件"></a>一般php文件</h4><ul>
+<li>要使用命名空间规定当前路径，namespace 路径/包名（从根路径下开始）</li>
+</ul>
+<h4 id="自定义协议"><a href="#自定义协议" class="headerlink" title="自定义协议"></a>自定义协议</h4><ul>
+<li>内容放在workerman/Protocols文件夹下面</li>
+</ul>
+<h4 id="Worker类"><a href="#Worker类" class="headerlink" title="Worker类"></a>Worker类</h4><pre><code>Worker类用于实现端口的监听，并可以设置客户端连接事件、连接上消息事件、连接断开事件的回调函数，从而实现业务处理。
+</code></pre><h6 id="lt-监听地址-gt-可以为以下格式："><a href="#lt-监听地址-gt-可以为以下格式：" class="headerlink" title="&lt;监听地址&gt; 可以为以下格式："></a>&lt;监听地址&gt; 可以为以下格式：</h6><ul>
+<li>如果是unix套接字，地址为本地一个磁盘路径</li>
+<li>非unix套接字，地址格式为 &lt;本机ip&gt;:&lt;端口号&gt;</li>
+<li>&lt;本机ip&gt;可以为0.0.0.0表示监听本机所有网卡，包括内网ip和外网ip及本地回环127.0.0.1</li>
+<li>&lt;本机ip&gt;如果以为127.0.0.1表示监听本地回环，只能本机访问，外部无法访问</li>
+<li>&lt;本机ip&gt;如果为内网ip，类似192.168.xx.xx，表示只监听内网ip，则外网用户无法访问</li>
+<li>&lt;本机ip&gt;设置的值不属于本机ip则无法执行监听，并且提示Cannot assign requested address错误</li>
+</ul>
+<p>入口文件配置协议、端口、监听内容等配置。<br>入口文件中可以使用多个回调函数，从而达到检测服务的运行状况。</p>
+<p>core/WorkerMan文件夹中可以自定义协议，使用通信</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/12/WorkerMan简单理解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-CI中session使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/CI中session使用/">CI中session使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/12/CI中session使用/" class="archive-article-date">
+  	<time datetime="2017-03-12T11:55:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="session的使用"><a href="#session的使用" class="headerlink" title="session的使用"></a>session的使用</h3><blockquote>
+<p>验证码小例子</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/03/12/CI中session使用/#more">看全呗~ >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/12/CI中session使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-CI的分页和文件上传小实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/CI的分页和文件上传小实例/">CI的分页和文件上传小实例</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/12/CI的分页和文件上传小实例/" class="archive-article-date">
+  	<time datetime="2017-03-12T11:49:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CI自带的内容"><a href="#CI自带的内容" class="headerlink" title="CI自带的内容"></a>CI自带的内容</h3><blockquote>
+<p>分页内容<br>文件上传</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/03/12/CI的分页和文件上传小实例/#more">看全呗~ >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/12/CI的分页和文件上传小实例/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-CI基本理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/CI基本理解/">CI基本理解</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/12/CI基本理解/" class="archive-article-date">
+  	<time datetime="2017-03-12T11:31:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="PHP的CI框架的基本理解"><a href="#PHP的CI框架的基本理解" class="headerlink" title="PHP的CI框架的基本理解"></a>PHP的CI框架的基本理解</h3><blockquote>
+<p>控制层<br>视图层<br>模型层<br>操作数据库<br>AR操作</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/03/12/CI基本理解/#more">看全呗~ >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/12/CI基本理解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Centos6-6下配置LAMP环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/Centos6-6下配置LAMP环境/">CentOS6.6下配置LAMP环境</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/12/Centos6-6下配置LAMP环境/" class="archive-article-date">
+  	<time datetime="2017-03-12T10:55:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CentOS配置PHP运行环境，即LAMP"><a href="#CentOS配置PHP运行环境，即LAMP" class="headerlink" title="CentOS配置PHP运行环境，即LAMP"></a>CentOS配置PHP运行环境，即LAMP</h2><blockquote>
+<p>yum安装apache服务器<br>yum安装PHP环境<br>yum安装MySQL<br>MySQL一些基本使用</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/03/12/Centos6-6下配置LAMP环境/#more">看全呗~ >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/12/Centos6-6下配置LAMP环境/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-MyBatis3的简单小例子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -547,427 +915,9 @@
 
 
   
-    <article id="post-Node-js中MySQL的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/Node-js中MySQL的使用/">Node.js中MySQL的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/20/Node-js中MySQL的使用/" class="archive-article-date">
-  	<time datetime="2017-02-20T12:53:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Node-js的MySQL数据库的使用"><a href="#Node-js的MySQL数据库的使用" class="headerlink" title="Node.js的MySQL数据库的使用"></a>Node.js的MySQL数据库的使用</h1><p><a href="https://www.mamp.info/en/downloads/">下载地址</a></p>
-<h2 id="数据库的分类"><a href="#数据库的分类" class="headerlink" title="数据库的分类"></a>数据库的分类</h2><blockquote>
-<p>关系型数据库<br>非关系型数据库</p>
-</blockquote>
-<h3 id="关系型数据库组成"><a href="#关系型数据库组成" class="headerlink" title="关系型数据库组成"></a>关系型数据库组成</h3><ul>
-<li><h6 id="数据库：数据库是一些关联表的集合"><a href="#数据库：数据库是一些关联表的集合" class="headerlink" title="数据库：数据库是一些关联表的集合"></a>数据库：数据库是一些关联表的集合</h6></li>
-<li><h6 id="数据表：表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。"><a href="#数据表：表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。" class="headerlink" title="数据表：表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。"></a>数据表：表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。</h6></li>
-<li><h6 id="行：一条数据。"><a href="#行：一条数据。" class="headerlink" title="行：一条数据。"></a>行：一条数据。</h6></li>
-<li><h6 id="列：相同类型的数据"><a href="#列：相同类型的数据" class="headerlink" title="列：相同类型的数据"></a>列：相同类型的数据</h6></li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/02/20/Node-js中MySQL的使用/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/20/Node-js中MySQL的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Hibernate一对一关系映射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/Hibernate一对一关系映射/">Hibernate一对一关系映射</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/20/Hibernate一对一关系映射/" class="archive-article-date">
-  	<time datetime="2017-02-20T12:52:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h1><pre><code>表与表之间互相对应，各式互相的唯一
-常用的例子是：身份证和人之间的关系，或是工作证与个人的关系，我这里举例老师和工作证的关系。
-</code></pre><h4 id="teachers表"><a href="#teachers表" class="headerlink" title="teachers表"></a>teachers表</h4><table>
-<thead>
-<tr>
-<th style="text-align:center">字段名</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">约束</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">id</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">主键</td>
-</tr>
-<tr>
-<td style="text-align:center">t_name</td>
-<td style="text-align:center">varchar</td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="card表"><a href="#card表" class="headerlink" title="card表"></a>card表</h4><table>
-<thead>
-<tr>
-<th style="text-align:center">字段名</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">约束</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">card_num</td>
-<td style="text-align:center">varchar</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">t_id</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">主键/外键</td>
-</tr>
-</tbody>
-</table>
-        
-          <a class="article-more-a" href="/2017/02/20/Hibernate一对一关系映射/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/20/Hibernate一对一关系映射/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-我的作品集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/19/我的作品集/">我的作品集</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/19/我的作品集/" class="archive-article-date">
-  	<time datetime="2017-02-19T12:45:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="作品展示"><a href="#作品展示" class="headerlink" title="作品展示"></a>作品展示</h1><blockquote>
-<h3 id="前台作品"><a href="#前台作品" class="headerlink" title="前台作品"></a>前台作品</h3><blockquote>
-<h4 id="照片墙"><a href="#照片墙" class="headerlink" title="照片墙"></a>照片墙</h4><h4 id="QQVip静态页面"><a href="#QQVip静态页面" class="headerlink" title="QQVip静态页面"></a>QQVip静态页面</h4><h4 id="网易云音乐视频页面"><a href="#网易云音乐视频页面" class="headerlink" title="网易云音乐视频页面"></a>网易云音乐视频页面</h4><h4 id="斗鱼页面播放页面"><a href="#斗鱼页面播放页面" class="headerlink" title="斗鱼页面播放页面"></a>斗鱼页面播放页面</h4><h4 id="bootstrap练习页面"><a href="#bootstrap练习页面" class="headerlink" title="bootstrap练习页面"></a>bootstrap练习页面</h4><h4 id="2048"><a href="#2048" class="headerlink" title="2048"></a>2048</h4><h4 id="皮卡丘跑酷"><a href="#皮卡丘跑酷" class="headerlink" title="皮卡丘跑酷"></a>皮卡丘跑酷</h4></blockquote>
-<h3 id="Java项目"><a href="#Java项目" class="headerlink" title="Java项目"></a>Java项目</h3><blockquote>
-<h4 id="BBS论坛"><a href="#BBS论坛" class="headerlink" title="BBS论坛"></a>BBS论坛</h4><h4 id="JavaWeb工作室网站"><a href="#JavaWeb工作室网站" class="headerlink" title="JavaWeb工作室网站"></a>JavaWeb工作室网站</h4><h4 id="在线考试系统"><a href="#在线考试系统" class="headerlink" title="在线考试系统"></a>在线考试系统</h4><h4 id="学生管理系统"><a href="#学生管理系统" class="headerlink" title="学生管理系统"></a>学生管理系统</h4><h4 id="鲜花在线销售平台"><a href="#鲜花在线销售平台" class="headerlink" title="鲜花在线销售平台"></a>鲜花在线销售平台</h4></blockquote>
-<h3 id="iOS作品"><a href="#iOS作品" class="headerlink" title="iOS作品"></a>iOS作品</h3><blockquote>
-<h4 id="周末去哪耍"><a href="#周末去哪耍" class="headerlink" title="周末去哪耍"></a>周末去哪耍</h4><h4 id="爱生活爱烘焙"><a href="#爱生活爱烘焙" class="headerlink" title="爱生活爱烘焙"></a>爱生活爱烘焙</h4><h4 id="疯狂小鸟鸟"><a href="#疯狂小鸟鸟" class="headerlink" title="疯狂小鸟鸟"></a>疯狂小鸟鸟</h4><h4 id="看博客"><a href="#看博客" class="headerlink" title="看博客"></a>看博客</h4><h4 id="书评Love"><a href="#书评Love" class="headerlink" title="书评Love"></a>书评Love</h4></blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/02/19/我的作品集/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">足球生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/19/我的作品集/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Express运用AJAX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/18/Express运用AJAX/">Express运用AJAX</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/18/Express运用AJAX/" class="archive-article-date">
-  	<time datetime="2017-02-18T07:56:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="什么是AJAX"><a href="#什么是AJAX" class="headerlink" title="什么是AJAX"></a>什么是AJAX</h2><pre><code>目的是为了减少表单在过程中过多请求相同页面导致的带宽浪费问题，同时可以减少表单填写错误而必须填写整套表单而带来的用户体验下滑。
-</code></pre><h2 id="创建XMLHttpRequest"><a href="#创建XMLHttpRequest" class="headerlink" title="创建XMLHttpRequest"></a>创建XMLHttpRequest</h2><ul>
-<li><p>状态机 01234 可以增强用户体验</p>
-<p>  0：刚开始</p>
-<p>  1：开始</p>
-<p>  2：刚接受头部</p>
-<p>  3：下载响应体</p>
-<p>  4：搞定完成</p>
-</li>
-</ul>
-<h2 id="注册验证小例子"><a href="#注册验证小例子" class="headerlink" title="注册验证小例子"></a>注册验证小例子</h2><p>index.js路由配置中<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/checkname'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> username = req.query.username;</div><div class="line">    <span class="keyword">var</span> str = <span class="string">'zzq'</span>;</div><div class="line">    <span class="keyword">if</span>(str === username)&#123;</div><div class="line">        res.send(username + <span class="string">'已经存在'</span>);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        res.send(<span class="string">'用户名可以使用'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>index.ejs页面设置<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">input</span> type=<span class="string">"text"</span> name=<span class="string">"username"</span> value=<span class="string">""</span> id=<span class="string">"username"</span>&gt;</div><div class="line">&lt;<span class="selector-tag">span</span> id=<span class="string">"info"</span>&gt;&lt;/span&gt;</div></pre></td></tr></table></figure></p>
-<p>js代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> req = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    <span class="keyword">var</span> input = <span class="built_in">document</span>.getElementById(<span class="string">'username'</span>);</div><div class="line">    <span class="keyword">var</span> info = <span class="built_in">document</span>.getElementById(<span class="string">'info'</span>);</div><div class="line">    input.addEventListener(<span class="string">"blur"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">//get请求，数据随url传输</span></div><div class="line">        req.open(<span class="string">'get'</span>,<span class="string">'/checkname?username='</span>+input.value);</div><div class="line">        req.send();</div><div class="line">        req.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span>(req.readyState === <span class="number">4</span>)&#123;</div><div class="line">                info.innerHTML = req.responseText;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<pre><code>注意：
-var req = new XMLHttpRequest();
-1.接受数据——req.responseText;
-router.get(&apos;/checkname&apos;, function (req, res, next)
-1.路由接收get参数——var username = req.query.username;
-2.路由接收post参数——req.body.username;
-</code></pre><h2 id="从后端向前段传JSON数据"><a href="#从后端向前段传JSON数据" class="headerlink" title="从后端向前段传JSON数据"></a>从后端向前段传JSON数据</h2><p>页面文件js内容(用JQuery写)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $(<span class="string">'button'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">            $.ajax(&#123;</div><div class="line">                <span class="attr">url</span>:<span class="string">'/getZZ'</span>,</div><div class="line">                <span class="attr">type</span>:<span class="string">'get'</span>,</div><div class="line">                <span class="attr">data</span>:&#123;<span class="attr">name</span>:<span class="string">'zzq'</span>&#125;,</div><div class="line">                <span class="attr">success</span>:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">                    <span class="comment">// 从后端取数据，并动态显示于页面</span></div><div class="line">                    <span class="comment">// 后端数据在data中</span></div><div class="line">                    $(<span class="string">'&lt;h1&gt;&lt;/h1&gt;'</span>).addClass(<span class="string">'title'</span>).text(data.title).appendTo($(<span class="string">'#container'</span>));</div><div class="line">                    $(<span class="string">'&lt;h2&gt;&lt;/h2&gt;'</span>).addClass(<span class="string">'des'</span>).text(data.src).appendTo($(<span class="string">'#container'</span>));</div><div class="line">                    $(<span class="string">'&lt;p&gt;&lt;/p&gt;'</span>).addClass(<span class="string">'content'</span>).text(data.content).appendTo($(<span class="string">'#container'</span>));</div><div class="line">                &#125;,</div><div class="line">                <span class="attr">error</span>:<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>路由index.js配置<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/getzz'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;</div><div class="line">        title:<span class="string">'今日头条:lalalalalla'</span>,</div><div class="line">        src:<span class="string">'今日来源:hehehehehehe'</span>,</div><div class="line">        content:<span class="string">'buzhiodao 不知道。。。。'</span></div><div class="line">    &#125;</div><div class="line">    res.json(obj);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<pre><code>注意：post写法相同，但传递的方式不同，接收用req.body接收
-</code></pre><h2 id="跨域访问"><a href="#跨域访问" class="headerlink" title="跨域访问"></a>跨域访问</h2><h4 id="什么是源"><a href="#什么是源" class="headerlink" title="什么是源"></a>什么是源</h4><pre><code>源是指资源，网络中能请求到的都是资源。请求资源需要使用统一资源定位符。(Uniform Resource Locator,简称URL)
-</code></pre><h4 id="什么是同源"><a href="#什么是同源" class="headerlink" title="什么是同源"></a>什么是同源</h4><pre><code>两个页面拥有相同的协议、端口、主机域名，name这两个就是同源页面。
-</code></pre><h4 id="跨域请求中间件"><a href="#跨域请求中间件" class="headerlink" title="跨域请求中间件"></a>跨域请求中间件</h4><p><a href="https://enable-cors.org/server_expressjs.html" target="_blank" rel="external">文档网站</a><br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span></span> &#123;</div><div class="line">  res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</div><div class="line">  res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Origin, X-Requested-With, Content-Type, Accept"</span>);</div><div class="line">  <span class="built_in">next</span>();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/18/Express运用AJAX/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hibernate4-3一对多基本配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/18/hibernate4-3一对多基本配置/">hibernate4.3一对多基本配置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/18/hibernate4-3一对多基本配置/" class="archive-article-date">
-  	<time datetime="2017-02-18T07:37:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="表与表之间的关联映射（-基于Hibernate4-3）"><a href="#表与表之间的关联映射（-基于Hibernate4-3）" class="headerlink" title="表与表之间的关联映射（ 基于Hibernate4.3）"></a>表与表之间的关联映射（ 基于Hibernate4.3）</h1><blockquote>
-<h4 id="单向一对多配置"><a href="#单向一对多配置" class="headerlink" title="单向一对多配置"></a>单向一对多配置</h4><h4 id="单向多对一配置"><a href="#单向多对一配置" class="headerlink" title="单向多对一配置"></a>单向多对一配置</h4><h4 id="双向一对多配置"><a href="#双向一对多配置" class="headerlink" title="双向一对多配置"></a>双向一对多配置</h4><h4 id="其它属性"><a href="#其它属性" class="headerlink" title="其它属性"></a>其它属性</h4></blockquote>
-        
-          <a class="article-more-a" href="/2017/02/18/hibernate4-3一对多基本配置/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/18/hibernate4-3一对多基本配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1074,11 +1024,23 @@ router.get(&apos;/checkname&apos;, function (req, res, next)
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前台</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">毕业设计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1098,10 +1060,6 @@ router.get(&apos;/checkname&apos;, function (req, res, next)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
@@ -1111,10 +1069,6 @@ router.get(&apos;/checkname&apos;, function (req, res, next)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
               </li>
              
               <li class="article-tag-list-item">
