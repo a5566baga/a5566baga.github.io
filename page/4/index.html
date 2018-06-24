@@ -184,6 +184,290 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-struts2注解类型转换国际化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/14/struts2注解类型转换国际化/">struts2注解类型转换国际化</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/14/struts2注解类型转换国际化/" class="archive-article-date">
+  	<time datetime="2017-02-14T11:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="注解使用"><a href="#注解使用" class="headerlink" title="注解使用"></a>注解使用</h2><ul>
+<li><p>导包<br>  @ParentPackage<br>  @Namespace<br>  @Action()默认action名称</p>
+</li>
+<li><p>默认动态配置没打开,手动配置<br>在struts.xml中添加</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="built_in">constant</span> <span class="built_in">name</span>=<span class="string">"struts.enable.DynamicMethodInvocation"</span> value=<span class="string">"true"</span>&gt;&lt;/<span class="built_in">constant</span>&gt;</div></pre></td></tr></table></figure>
+<p>  在struts2-core-2.3.31.jar—&gt;org.apache.struts2—&gt;default.properties找【struts.enable.DynamicMethodInvocation = false】然后进行相应的修改</p>
+</li>
+<li><p>修改xml和java文件</p>
+</li>
+<li>Action的java文件中配置的注解不要用一个value，否则后面会覆盖</li>
+<li>在每个方法前面写@Action注解</li>
+<li>对应jsp进行action的修改<h5 id="代码举例"><a href="#代码举例" class="headerlink" title="代码举例"></a>代码举例</h5>java代码<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@ParentPackage</span>(<span class="string">"struts-default"</span>)</div><div class="line"><span class="variable">@Namespace</span>(<span class="string">"/users"</span>)</div><div class="line"><span class="variable">@Results</span>(&#123;<span class="variable">@Result</span>(name=<span class="string">"query"</span>,type=<span class="string">"chain"</span>,params=&#123;<span class="string">"actionName"</span>,<span class="string">"query"</span>&#125;)&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li>应用场景，如：日期的自定义</li>
+<li>实现TypeConverter</li>
+<li>配置 .properties文件，命名要规范(类名-conversion.properties)</li>
+<li>提交录入是执行/显示数据时执行</li>
+</ul>
+<h5 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h5><ul>
+<li>继承StrutsTypeConverter</li>
+<li>在重写的两个方法中分别对应表单提交和查询表示</li>
+<li>提交表单的方法中可以针对提交的内容进行封装</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">public <span class="built_in">Object</span> convertFromString(<span class="built_in">Map</span> context, <span class="built_in">String</span>[] params, Class toClass) &#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//从Object转为String——显示数据的时候执行此方法</span></div><div class="line"><span class="meta">@Override</span></div><div class="line">public <span class="built_in">String</span> convertToString(<span class="built_in">Map</span> context, <span class="built_in">Object</span> obj) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>全局配置xwork-conversion.properties里面可以配置全局的类型转换。放在包的根目录下
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java<span class="selector-class">.sql</span><span class="selector-class">.Date</span>=com<span class="selector-class">.ben</span><span class="selector-class">.struts</span><span class="selector-class">.converter</span><span class="selector-class">.DateConverter</span></div></pre></td></tr></table></figure>
+
+一般的放在包路径下
+</code></pre><h2 id="国际化"><a href="#国际化" class="headerlink" title="国际化"></a>国际化</h2><ul>
+<li>struts.xml中配置标签</li>
+<li>配合标签使用</li>
+<li>设置.properties,注意前面的_zh_CN等标志</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts2</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/14/struts2注解类型转换国际化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-struts2拦截器配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/struts2拦截器配置/">struts2拦截器配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/13/struts2拦截器配置/" class="archive-article-date">
+  	<time datetime="2017-02-13T12:03:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><h5 id="struts-xml中"><a href="#struts-xml中" class="headerlink" title="struts.xml中"></a>struts.xml中</h5><pre><code>name：自定义拦截器的名称
+class：拦截器所在的类
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;interceptor name=<span class="string">"myInterceptor"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.ben.interceptor.MyInterceptor"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">interceptor</span>&gt;</span></span></div><div class="line">&lt;action name=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">""</span>&gt;</div><div class="line">	<span class="xml"><span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"defaultStack"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></span></div><div class="line">	<span class="tag">&lt;<span class="name">interceptor-ref</span> <span class="attr">name</span>=<span class="string">"myInterceptor"</span>&gt;</span><span class="tag">&lt;/<span class="name">interceptor-ref</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">action</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="MyInterceptor-java"><a href="#MyInterceptor-java" class="headerlink" title="MyInterceptor.java"></a>MyInterceptor.java</h6><pre><code>实现Interceptor接口，重写方法
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.ben.interceptor;</div><div class="line"><span class="keyword">import</span> com.opensymphony.xwork2.ActionInvocation;</div><div class="line"><span class="keyword">import</span> com.opensymphony.xwork2.interceptor.Interceptor;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">implements</span> <span class="title">Interceptor</span></span>&#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">intercept</span><span class="params">(ActionInvocation arg0)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JAVA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts2</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/13/struts2拦截器配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Node-js安装与nmp的基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/Node-js安装与nmp的基本使用/">Node.js安装与nmp的基本使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/13/Node-js安装与nmp的基本使用/" class="archive-article-date">
+  	<time datetime="2017-02-13T12:00:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Node-js安装与nmp的基本使用"><a href="#Node-js安装与nmp的基本使用" class="headerlink" title="Node.js安装与nmp的基本使用"></a>Node.js安装与nmp的基本使用</h1><h2 id="JavaScript引擎"><a href="#JavaScript引擎" class="headerlink" title="JavaScript引擎"></a>JavaScript引擎</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Browser,Headless Browser,or Runtime</th>
+<th style="text-align:center">JavaScript Engine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Mozilla</td>
+<td style="text-align:center">Spidermonkey</td>
+</tr>
+<tr>
+<td style="text-align:center">Chrome</td>
+<td style="text-align:center">V8</td>
+</tr>
+<tr>
+<td style="text-align:center">Safari</td>
+<td style="text-align:center">JavaScriptCore</td>
+</tr>
+<tr>
+<td style="text-align:center">IE and Edge</td>
+<td style="text-align:center">Chakra</td>
+</tr>
+<tr>
+<td style="text-align:center">PhantomJS</td>
+<td style="text-align:center">JavaScriptCore</td>
+</tr>
+<tr>
+<td style="text-align:center">HTMLUnit</td>
+<td style="text-align:center">Rhino</td>
+</tr>
+<tr>
+<td style="text-align:center">TrifileJS</td>
+<td style="text-align:center">V8</td>
+</tr>
+<tr>
+<td style="text-align:center">Node.js</td>
+<td style="text-align:center">V8</td>
+</tr>
+<tr>
+<td style="text-align:center">Io.js</td>
+<td style="text-align:center">V8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chrome的V8引擎"><a href="#chrome的V8引擎" class="headerlink" title="chrome的V8引擎"></a>chrome的V8引擎</h3>
+        
+          <a class="article-more-a" href="/2017/02/13/Node-js安装与nmp的基本使用/#more">看全呗~ >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/13/Node-js安装与nmp的基本使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-iOS毛玻璃效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -678,208 +962,6 @@
 
 
   
-    <article id="post-FitBody客户端功能设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/06/FitBody客户端功能设计/">FitBody客户端功能设计</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/06/FitBody客户端功能设计/" class="archive-article-date">
-  	<time datetime="2017-02-06T11:34:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="FitBody客户端功能分析"><a href="#FitBody客户端功能分析" class="headerlink" title="FitBody客户端功能分析"></a>FitBody客户端功能分析</h2><blockquote>
-<h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><h4 id="浏览菜品"><a href="#浏览菜品" class="headerlink" title="浏览菜品"></a>浏览菜品</h4><h4 id="下单"><a href="#下单" class="headerlink" title="下单"></a>下单</h4><h4 id="查看订单详情"><a href="#查看订单详情" class="headerlink" title="查看订单详情"></a>查看订单详情</h4><h4 id="签收"><a href="#签收" class="headerlink" title="签收"></a>签收</h4><h4 id="个人设置"><a href="#个人设置" class="headerlink" title="个人设置"></a>个人设置</h4><h4 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h4></blockquote>
-        
-          <a class="article-more-a" href="/2017/02/06/FitBody客户端功能设计/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其它</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/06/FitBody客户端功能设计/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-简单斗鱼网站页面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/06/简单斗鱼网站页面/">简单斗鱼网站页面</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/06/简单斗鱼网站页面/" class="archive-article-date">
-  	<time datetime="2017-02-06T10:43:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="利用H5和CSS3制作简单的斗鱼页面"><a href="#利用H5和CSS3制作简单的斗鱼页面" class="headerlink" title="利用H5和CSS3制作简单的斗鱼页面"></a>利用H5和CSS3制作简单的斗鱼页面</h2><blockquote>
-<h4 id="利用的技术有"><a href="#利用的技术有" class="headerlink" title="利用的技术有"></a>利用的技术有</h4><blockquote>
-<p>video标签</p>
-<p>CSS3的动画</p>
-<p>自定义控制按钮</p>
-<p>引入第三方字体图标</p>
-</blockquote>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/02/06/简单斗鱼网站页面/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前台</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/06/简单斗鱼网站页面/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-调查问卷" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/05/调查问卷/">调查问卷</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/05/调查问卷/" class="archive-article-date">
-  	<time datetime="2017-02-05T14:26:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="健身餐需求调查表"><a href="#健身餐需求调查表" class="headerlink" title="健身餐需求调查表"></a>健身餐需求调查表</h2><blockquote>
-<p>其它需求分析阶段——分析用户人群，提炼应用功能<br><a href="https://www.wenjuan.net/s/UNz2em/">健身餐需求调查表</a></p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/02/05/调查问卷/#more">看全呗~ >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其它</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/05/调查问卷/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -997,11 +1079,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color3">前台</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前台</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1009,7 +1091,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1017,7 +1107,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1029,10 +1119,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">struts2</a>
               </li>
              
@@ -1041,11 +1127,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">足球生活</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color5">足球生活</a>
               </li>
             
             <div class="clearfix"></div>
